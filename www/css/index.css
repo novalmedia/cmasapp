@@ -11,8 +11,8 @@ box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.5);
 -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.5);}
 nav ul li a {color: #000000;text-decoration: none;font-size: 1.2em;}
 nav ul li a img{width: 70%;height:auto;} 
-a.menu {width: 10%;float: left;}
-a.menu img {width: 90%;float: left;margin:5% 0 0 10%;}
+a.menu {width: 15%;float: left;}
+a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
 .headerimg {width: 80%;float: right;}
 
 #app {
