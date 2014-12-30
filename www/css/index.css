@@ -9,5 +9,42 @@ background-color: white;
 position: relative;
 box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.5);
 -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.5);}
-nav ul li a {color: #000000;text-decoration: none;font-size: 1.5em;}
+nav ul li a {color: #000000;text-decoration: none;font-size: 1.2em;}
 nav ul li a img{width: 70%;height:auto;} 
+a.menu {width: 10%;float: left;}
+a.menu img {width: 90%;float: left;margin:5% 0 0 10%;}
+.headerimg {width: 80%;float: right;}
+
+#app {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    -webkit-transform: translate3d(0, 0, 0); 
+    transform: translate3d(0, 0, 0); 
+	-webkit-transition-duration: .25s; 
+    transition-duration: .25s; 
+}
+#app.open {
+    -webkit-transform: translate3d(85%, 0, 0); 
+    transform: translate3d(85%, 0, 0); 
+}
+#menu {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+	background:#fff;
+    width: 85%; 
+    min-height: 100%; 
+    -webkit-transform: translate3d(-100%, 0, 0); 
+    transform: translate3d(-100%, 0, 0); 
+	-webkit-transition-duration: .25s; 
+    transition-duration: .25s; 
+}
+#menu.open { 
+    -webkit-transform: translate3d(0, 0, 0); 
+    transform: translate3d(0, 0, 0); 
+	box-shadow: 5px 0 10px #999;
+	display: block;
+}
