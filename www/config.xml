@@ -99,5 +99,6 @@
     <gap:plugin name="org.apache.cordova.media-capture"></gap:plugin>
     <gap:plugin name="org.apache.cordova.network-information"></gap:plugin>
     <gap:plugin name="org.apache.cordova.splashscreen"></gap:plugin>
+	<gap:plugin name="com.gamethrive.plugins.gamethrive" version="1.2.0"></gap:plugin>
     <gap:platform name="android"/>
     <preference name="splash-screen-duration" value="3000"/></widget>
