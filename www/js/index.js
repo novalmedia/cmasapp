@@ -38,13 +38,14 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
-    }
+    },
+	didReceiveRemoteNotificationCallBack : function(jsonData) {
+	  alert("Notification received:\n" + JSON.stringify(jsonData));
+	  console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+	}
 };
 
 window.plugins.GameThrive.init("bd349d06-9102-11e4-9d48-43f6faa662e7",
-                               {googleProjectNumber: "349344466742"},
+                               {googleProjectNumber: "349344466742",
+                                autoRegister: true},
                                app.didReceiveRemoteNotificationCallBack);
-didReceiveRemoteNotificationCallBack : function(jsonData) {
-  alert("Notification received:\n" + JSON.stringify(jsonData));
-  console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-}
