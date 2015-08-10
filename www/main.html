@@ -8,6 +8,7 @@
 <title>Club Mascodin</title>
     
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="PushNotification.js"></script>
 
@@ -35,11 +36,9 @@
 </div>
 <div id="menu">	
 	<h2>Perfil</h2>
-	<div>
-		<p><label>Socio:<input type="text" name="socio" /></label></p>
-		<p><label>Clave:<input type="password" name="clave" /></label></p>
-		<p><button type="submit">Enviar</button></p>
-	</div>
+	<h3>Hola <span id="pname"></span></h3>
+	<p><strong>Nº de socio:</strong> <span id="psocio"></span></p>
+	
 </div>
 	<script type="text/javascript">
             app.initialize();
@@ -56,8 +55,14 @@
 				}else{
 					d2.className='open';
 				}
-			return false;
+				return false;
 			}
+			$(window).load(function(){
+				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+					$("#psocio").html(window.localStorage["socio"]);
+					$("#pname").html(window.localStorage["name"]);
+				}
+			});
         </script>
 </body>
 </html>

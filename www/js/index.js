@@ -25,9 +25,11 @@ function handleLogin() {
 				navigator.notification.alert("Error de identificación", function() {});
 			} else {
 				//store
-				alert(res.username);
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;
+				window.localStorage["userid"] = res.id;
+				window.localStorage["socio"] = res.username;
+				window.localStorage["name"] = res.name;
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
