@@ -25,7 +25,7 @@ function handleLogin() {
 				navigator.notification.alert("Error de identificación", function() {});
 			} else {
 				//store
-				alert(res);
+				alert(res.username);
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;
 				//window.localStorage["userdata"] = res;
