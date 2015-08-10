@@ -27,7 +27,7 @@ function handleLogin() {
 				window.localStorage["password"] = p;
 				var pushNotification = window.plugins.pushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
-
+				window.location = "main.html";
 			} else {
 				navigator.notification.alert("Error de identificación", function() {});
 			}
