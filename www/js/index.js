@@ -28,7 +28,7 @@ function handleLogin() {
 				alert(res);
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;
-				window.localStorage["userdata"] = res;
+				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
 				window.location = "main.html";
