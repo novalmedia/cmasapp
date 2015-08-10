@@ -8,56 +8,42 @@
 <title>Club Mascodin</title>
     
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="PushNotification.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 </head>
-<body>
-<div id="app">
-	<header>
-		<a class="menu" href="#" onclick="toggleMenu();"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUwIDUwIiBoZWlnaHQ9IjMzIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzNyAzMyIgd2lkdGg9IjM3IiB4PSIwcHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHk9IjBweCI+PGxpbmUgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiB4MT0iMzQuMyIgeDI9IjMuMjQiIHkxPSIyOS4zIiB5Mj0iMjkuMyIgc3R5bGU9InN0cm9rZTojMDUwYTI3O3N0cm9rZS13aWR0aDo1LjM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7IiAvPjxsaW5lIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgeDE9IjM0LjMiIHgyPSIzLjE1IiB5MT0iMy4zNSIgeTI9IjMuMzMiIHN0eWxlPSJzdHJva2U6IzA1MGEyNztzdHJva2Utd2lkdGg6NS4zO3N0cm9rZS1saW5lY2FwOnJvdW5kOyIgLz48bGluZSBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHgxPSIzNC4zIiB4Mj0iMy4yNCIgeTE9IjE2LjMiIHkyPSIxNi4zIiBzdHlsZT0ic3Ryb2tlOiMwNTBhMjc7c3Ryb2tlLXdpZHRoOjUuMztzdHJva2UtbGluZWNhcDpyb3VuZDsiIC8+PC9zdmc+" /></a>
-		<img class="headerimg" src="images/header.png" width="100%" />
-	</header>
+<body onload="init();">
+<div id="loginPage" data-role="page">
 
-	<nav>
-		<ul>
-			<li><a href="#" onclick="window.open('http://www.clubmascodin.com/cita-veterinario', '_system');"><img src="images/club.png" /><br>Cita online</a></li>
-			<li><a href="tel:+34955262133"><img src="images/contacto.png" /><br>Contacto</a></li>
-			<li><a href="geo:37.352429,-6.059522?q=37.352429,-6.059522(Club Mascodin)"><img src="images/localizacion.png" /><br>Localización</a></li>
-			<li><a href="tel:+34618612418"><img src="images/urgencias.png" /><br>Urgencias</a></li>
-		</ul>
-	</nav>
+<div data-role="header">
+<h1>Acceso socio</h1>
+</div>
 
-	
-	<footer>
-	</footer>
+<div data-role="content">
+
+<form id="loginForm">
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="username">Socio:</label>
+<input type="text" name="username" id="username" value="" placeholder="Username" />
 </div>
-<div id="menu">	
-	<h2>Perfil</h2>
-	<div>
-		<p><label>Socio:<input type="text" name="socio" /></label></p>
-		<p><label>Clave:<input type="password" name="clave" /></label></p>
-		<p><button type="submit">Enviar</button></p>
-	</div>
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<label for="password">Contraseña:</label>
+<input type="password" name="password" id="password" value="" placeholder="Password" />
 </div>
-	<script type="text/javascript">
-            app.initialize();
-			function toggleMenu(){
-				d1=document.getElementById('menu');
-				if (d1.className=='open'){
-					d1.className='';
-				}else{
-					d1.className='open';
-				}
-				d2=document.getElementById('app');
-				if (d2.className=='open'){
-					d2.className='';
-				}else{
-					d2.className='open';
-				}
-			return false;
-			}
-        </script>
+
+<input type="submit" value="Entrar" id="submitButton">
+</form>
+
+</div>
+</div>
+
+<script>
+app.initialize();
+$("#loginPage").live("pageinit", function(e) {
+checkPreAuth();
+});
+</script>
 </body>
 </html>
