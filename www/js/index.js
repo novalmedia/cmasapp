@@ -21,15 +21,17 @@ function handleLogin() {
 	console.log("click");
 	if(u != '' && p!= '') {
 		$.post("http://www.clubmascodin.com/app/auth.php", {username:u,password:p}, function(res) {
-			if(res == true) {
+			if(res == false) {
+				navigator.notification.alert("Error de identificación", function() {});
+			} else {
 				//store
+				alert(res);
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;
+				window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
 				window.location = "main.html";
-			} else {
-				navigator.notification.alert("Error de identificación", function() {});
 			}
 			$("#submitButton").removeAttr("disabled");
 		},"json");
