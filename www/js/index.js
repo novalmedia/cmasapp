@@ -38,14 +38,39 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
+		var pushNotification = window.plugins.pushNotification;
+		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
     },
-	didReceiveRemoteNotificationCallBack : function(jsonData) {
-	  alert("Notification received:\n" + JSON.stringify(jsonData));
-	  console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
-	}
+	errorHandler:function(error) {
+		alert(error);
+	},
+	successHandler: function(result) {
+		alert('Callback Success! Result = '+result)
+	},
+	onNotificationGCM: function(e) {
+        switch( e.event )
+        {
+            case 'registered':
+                if ( e.regid.length > 0 )
+                {
+                    console.log("Regid " + e.regid);
+                    alert('registration id = '+e.regid);
+                }
+            break;
+ 
+            case 'message':
+              // this is the actual push notification. its format depends on the data model from the push server
+              alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+            break;
+ 
+            case 'error':
+              alert('GCM error = '+e.msg);
+            break;
+ 
+            default:
+              alert('An unknown GCM event has occurred');
+              break;
+        }
+    }
 };
 
-window.plugins.GameThrive.init("bd349d06-9102-11e4-9d48-43f6faa662e7",
-                               {googleProjectNumber: "349344466742",
-                                autoRegister: true},
-                               app.didReceiveRemoteNotificationCallBack);
