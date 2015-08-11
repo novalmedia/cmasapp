@@ -9,26 +9,23 @@
     
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery.mobile.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="PushNotification.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/index.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
-
-<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
 </head>
 <body>
-<div data-role="page" class="home"> 
+<div data-role="page"> 
   <div data-role="header" class="header" data-position="fixed"> 
-    <h1>Club Mascodin</h1> 
+    <h1>Panel</h1> 
     <a href="#panel" id="abre_panel" class="panel-btn"></a> 
   </div> 
    
   <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="overlay"> 
     <ul data-role="listview"> 
       <li data-icon="false"><a href="#" class="panel_li"  >Citas</a></li> 
-      <li data-icon="false"><a href="#" class="panel_li"  >Localizaci&oacute;n</a></li> 
+      <li data-icon="false"><a href="#" class="panel_li"  >Localización</a></li> 
       <li data-icon="false"><a href="#" class="panel_li"  >Contacto</a></li> 
     </ul> 
   </div> 
@@ -38,28 +35,6 @@
 </div>
 	<script type="text/javascript">
             app.initialize();
-			function toggleMenu(){
-				d1=document.getElementById('menu');
-				if (d1.className=='open'){
-					d1.className='';
-				}else{
-					d1.className='open';
-				}
-				d2=document.getElementById('app');
-				if (d2.className=='open'){
-					d2.className='';
-				}else{
-					d2.className='open';
-				}
-				return false;
-			}
-			$(window).load(function(){
-				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
-				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
-					$("#psocio").html(window.localStorage["socio"]);
-					$("#pname").html(window.localStorage["name"]);
-				}
-			});
         </script>
 </body>
 </html>

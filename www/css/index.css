@@ -1,20 +1,20 @@
-nav ul {box-sizing: border-box;padding:0;}
+nav ul {box-sizing: border-box;padding:0;width: 100%;float: left;}
 nav ul li {display: inline-block;
 text-align: center;
-width: 43%;
+width: 90%;
 height: auto;
 padding: 1em 0 1em 0;
-margin: 2.5% 3%;
+margin: 20px auto;
 background-color: white;
 position: relative;
-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.5);
--webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.5);}
-nav ul li a {color: #000000;text-decoration: none;font-size: 1.2em;}
+box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.5);
+-webkit-box-shadow: 0px 0px 4px 0px rgba(50, 50, 50, 0.5);}
+nav ul li a {color: #666666;text-decoration: none;font-size: 24pt;}
 nav ul li a img{width: 70%;height:auto;} 
 a.menu {width: 15%;float: left;}
 a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
 .headerimg {width: 80%;float: right;}
-
+.header { background-color:#3c91dc; }
 #app {
     position: absolute; 
     top: 0; 
@@ -30,6 +30,7 @@ a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
     -webkit-transform: translate3d(85%, 0, 0); 
     transform: translate3d(85%, 0, 0); 
 }
+.home {background: url(../images/index_bg.jpg) no-repeat center top;background-size:contain;}
 #menu {
     position: absolute; 
     top: 0; 
@@ -51,7 +52,23 @@ a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
 
 #loginPage { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(../images/login_bg.jpg) no-repeat center top; 
 background-size: contain;}
-#loginForm {margin: 500px auto;width: 320px;}
+#loginForm {margin: 350px auto 0;width: 320px;}
 #loginForm div input {width: 280px; height: 10px;background: rgba(255,255,255,.6); padding: 20px;border: 1px solid #999;
 margin-bottom: 10px;font-size:28pt;box-shadow: 0px 0px 10px #999;}
 #loginForm  > input {width: 320px; margin: 0 auto;float: none;font-size:24pt;padding: 5px;}
+
+
+
+#abre_panel{ 
+  position: absolute; 
+  background-image: url(img/menu_btn.png); 
+  background-repeat: no-repeat; 
+  width: 50px; 
+  height: 20px; 
+  box-shadow: none; 
+  background-color: transparent !important; 
+  border: none; 
+  left: -5px; 
+  top: 0; 
+  margin-top: 6px !important; 
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description"content="Club Mascodin" />
+
+<title>Club Mascodin</title>
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="PushNotification.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+<body onload="init();">
+<div id="loginPage" data-role="page">
+
+
+<div data-role="content">
+
+<form id="loginForm">
+<div data-role="fieldcontain" class="ui-hide-label">
+<input type="text" name="username" id="username" value="" placeholder="Socio" />
+</div>
+
+<div data-role="fieldcontain" class="ui-hide-label">
+<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+</div>
+
+<input type="submit" value="Entrar" id="submitButton">
+</form>
+
+</div>
+</div>
+
+<script>
+$(window).load(function(e) {
+	checkPreAuth();
+});
+</script>
+</body>
+</html>
