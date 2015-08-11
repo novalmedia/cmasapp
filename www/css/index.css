@@ -1,3 +1,5 @@
+body {background-color: #ffffff !important; }
+
 nav ul {box-sizing: border-box;padding:0;width: 100%;float: left;}
 nav ul li {display: inline-block;
 text-align: center;
@@ -14,7 +16,8 @@ nav ul li a img{width: 70%;height:auto;}
 a.menu {width: 15%;float: left;}
 a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
 .headerimg {width: 80%;float: right;}
-.header { background-color:#3c91dc; }
+#home .header { background-color:#3c91dc; }
+#home .header h1 { color: #ffffff; text-shadow: none;}
 #app {
     position: absolute; 
     top: 0; 
@@ -30,7 +33,7 @@ a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
     -webkit-transform: translate3d(85%, 0, 0); 
     transform: translate3d(85%, 0, 0); 
 }
-.home {background: url(../images/index_bg.jpg) no-repeat center top;background-size:contain;}
+#home {background: url(../images/index_bg.jpg) no-repeat center top;background-size:contain;}
 #menu {
     position: absolute; 
     top: 0; 
