@@ -6,6 +6,7 @@ window.onNotificationGCM =  function(e) {
 			if ( e.regid.length > 0 )
 			{
 				var uid = window.localStorage["userid"];
+				navigator.notification.alert(e.regid, function() {});
 				$.post("http://www.clubmascodin.com/app/savegcm.php", {userid:uid,gcmkey:e.regid}, function(res) {
 					if (res==true){
 						navigator.notification.alert("Identificación completada", function() {});
