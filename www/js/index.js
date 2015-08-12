@@ -1,4 +1,5 @@
 function init() {
+	app.initialize();
 	document.addEventListener("deviceready", deviceReady, true);
 	delete init;
 }
