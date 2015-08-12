@@ -32,7 +32,6 @@ function handleLogin() {
 				window.localStorage["name"] = res.name;
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
-				pushNotification.unregister(successHandler, errorHandler, {"senderID":"349344466742"});
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
 				//window.location = "index.html";
 			}
@@ -66,7 +65,7 @@ function onNotificationGCM(e) {
 			{
 				var uid = window.localStorage["userid"];
 				$.post("http://www.clubmascodin.com/app/savegcm.php", {userid:uid,gcmkey:e.regid}, function(res) {
-					if (reg==true){
+					if (res==true){
 						navigator.notification.alert("Identificación completada", function() {});
 						window.location = "index.html";
 					}
