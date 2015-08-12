@@ -33,7 +33,7 @@ function handleLogin() {
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
-				window.location = "main.html";
+				window.location = "index.html";
 			}
 			$("#submitButton").removeAttr("disabled");
 		},"json");

@@ -21,13 +21,31 @@
 </head>
 <body onload="init();">
 <div id="loginPage" data-role="page">
+ <div data-role="header" class="header" data-position="fixed"> 
+    <h1>Club Mascodin</h1> 
+    <a href="#panel" id="abre_panel" class="panel-btn"></a> 
+  </div> 
+<div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="overlay"> 
+	<div id="menu_header">
+		<img src="images/club.png" /><br>
+		<a href="login.html" class="login">Mi perfil</a>
+		<h1 class="private">Hola <span></span></h1>
+	</div>
+    <ul data-role="listview" class="private"> 
+      <li data-icon="false"><a href="#" class="panel_li"  >Mis datos</a></li> 
+      <li data-icon="false"><a href="#" class="panel_li"  >Mis mascotas</a></li> 
+      <li data-icon="false"><a href="#" class="panel_li"  >Mis mascotas</a></li> 
+    </ul> 
 
-<div data-role="header">
-	<img class="loginheader" src="images/login_bg.jpg" />
-</div>
-    
+    <ul data-role="listview"> 
+      <li data-icon="false"><a href="#" class="panel_li"  >Citas</a></li> 
+      <li data-icon="false"><a href="#" class="panel_li"  >Localizaci&oacute;n</a></li> 
+      <li data-icon="false"><a href="#" class="panel_li"  >Contacto</a></li> 
+    </ul> 
+  </div> 
 
 <div data-role="content">
+	<img class="loginheader" src="images/login_bg.jpg" />
 
 <form id="loginForm">
 <div data-role="fieldcontain" class="ui-hide-label">
