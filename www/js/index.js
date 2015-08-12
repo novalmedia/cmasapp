@@ -32,6 +32,7 @@ function handleLogin() {
 				window.localStorage["name"] = res.name;
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
+				pushNotification.unregister(successHandler, errorHandler, {"senderID":"349344466742"});
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
 				//window.location = "index.html";
 			}
