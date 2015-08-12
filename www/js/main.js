@@ -38,24 +38,29 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
-		var pushNotification = window.plugins.pushNotification;
-		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"349344466742","ecb":"app.onNotificationGCM"});
+		/* var pushNotification = window.plugins.pushNotification;
+		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"349344466742","ecb":"app.onNotificationGCM"}); */
     },
 	errorHandler:function(error) {
-		alert(error);
+		//alert(error);
 	},
 	successHandler: function(result) {
-		alert('Callback Success! Result = '+result)
+		//alert('Callback Success! Result = '+result)
 	},
 	onNotificationGCM: function(e) {
         switch( e.event )
         {
             case 'registered':
                 if ( e.regid.length > 0 )
-                {
-                    console.log("Regid " + e.regid);
-                    alert('registration id = '+e.regid);
-                }
+			{
+				var uid = window.localStorage["userid"];
+				$.post("http://www.clubmascodin.com/app/savegcm.php", {userid:uid,gcmkey:e.regid}, function(res) {
+					if (res==true){
+						navigator.notification.alert("Identificación completada", function() {});
+						window.location = "index.html";
+					}
+				},"json");
+			}
             break;
  
             case 'message':
