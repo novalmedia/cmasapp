@@ -1,5 +1,4 @@
 function init() {
-	app.initialize();
 	document.addEventListener("deviceready", deviceReady, true);
 	delete init;
 }
@@ -33,7 +32,7 @@ function handleLogin() {
 				window.localStorage["name"] = res.name;
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
-				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"window.onNotificationGCM"});
+				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
 				//window.location = "index.html";
 			}
 			$("#submitButton").removeAttr("disabled");
