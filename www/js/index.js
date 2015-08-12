@@ -33,7 +33,7 @@ function handleLogin() {
 				window.localStorage["name"] = res.name;
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
-				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"app.onNotificationGCM"});
+				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"window.onNotificationGCM"});
 				//window.location = "index.html";
 			}
 			$("#submitButton").removeAttr("disabled");
@@ -62,7 +62,7 @@ function successHandler(result) {
 }
 
 
-/* function onNotificationGCM(e) {
+window.onNotificationGCM =  function(e) {
 	switch( e.event )
 	{
 		case 'registered':
@@ -87,4 +87,4 @@ function successHandler(result) {
 			alert('An unknown GCM event has occurred');
 			break;
 	}
-} */
+} 
