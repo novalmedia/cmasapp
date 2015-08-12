@@ -46,7 +46,7 @@ function handleLogin() {
 }
 
 function deviceReady() {
-	$("#loginForm").on("submit",handleLogin);
+	$("#loginForm").submit(handleLogin);
 }
 
 
