@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description"content="Club Mascodin" />
+
+<title>Club Mascodin</title>
+    
+
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
+</head>
+<body>
+<div data-role="page" id="mensajes"> 
+  <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
+    <h1>Club Mascodin</h1> 
+    <a href="#panel" id="abre_panel" class="panel-btn"></a> 
+  </div> 
+   
+  <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="push"> 
+	<div id="menu_header">
+		<img src="images/club.png" /><br>
+		<h2><a href="login.html" class="login">Mi perfil</a></h2>
+		<h3 class="private">Hola <span id="pname"></span></h3>
+		<h4 class="private">Socio: <span id="psocio"></span></h4>
+	</div>
+     <ul data-role="listview" class="private"> 
+      <li data-icon="false"><a href="datos.html" class="panel_li"  >Mis datos</a></li> 
+      <li data-icon="false"><a href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
+      <li data-icon="false"><a href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
+    </ul> 
+
+   
+  </div> 
+
+  <div data-role="content" id="content"> 
+	
+  </div> 
+<div data-role="footer" class="ui-bar" data-position="fixed"> 
+	<div data-role="navbar">
+		<ul>
+			<li><a href="contacto.html" data-icon="phone">Contacto</a></li>
+			<li><a href="tel:955089393"  data-icon="plus">Urgencias</a></li>
+			<li><a href="logout.html"  data-icon="power" class="private">Logout</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+</div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="PushNotification.js"></script>
+
+	<script type="text/javascript">
+			app.initialize();
+			$(document).bind("mobileinit", function () {
+				$.mobile.ajaxEnabled = false;
+			});
+			$(document).on("pageshow", '#mensajes', function(){
+				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+					$("#psocio").html(window.localStorage["socio"]);
+					$("#pname").html(window.localStorage["name"]);
+					$("#name").val(window.localStorage["name"]);
+					$("#email").val(window.localStorage["email"]);
+					$('#content').html(window.localStorage["messages"].join());
+					$(".private").removeClass('private');
+					$(".loginlink").hide();
+				}
+			});
+    </script>
+    <script type="text/javascript" src="js/jquery.mobile.js"></script>
+</body>
+</html>
