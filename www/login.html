@@ -28,20 +28,17 @@
 <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="overlay"> 
 	<div id="menu_header">
 		<img src="images/club.png" /><br>
-		<a href="login.html" class="login">Mi perfil</a>
-		<h1 class="private">Hola <span></span></h1>
+		<h2><a href="login.html" class="login">Mi perfil</a></h2>
+		<h3 class="private">Hola <span id="pname"></span></h3>
+		<h4 class="private">Socio: <span id="psocio"></span></h4>
 	</div>
-    <ul data-role="listview" class="private"> 
-      <li data-icon="false"><a href="#" class="panel_li"  >Mis datos</a></li> 
-      <li data-icon="false"><a href="#" class="panel_li"  >Mis mascotas</a></li> 
-      <li data-icon="false"><a href="#" class="panel_li"  >Mis mascotas</a></li> 
+     <ul data-role="listview" class="private"> 
+      <li data-icon="false"><a href="datos.html" class="panel_li"  >Mis datos</a></li> 
+      <li data-icon="false"><a href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
+      <li data-icon="false"><a href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
     </ul> 
 
-    <ul data-role="listview"> 
-      <li data-icon="false"><a href="#" class="panel_li"  >Citas</a></li> 
-      <li data-icon="false"><a href="#" class="panel_li"  >Localizaci&oacute;n</a></li> 
-      <li data-icon="false"><a href="#" class="panel_li"  >Contacto</a></li> 
-    </ul> 
+   
   </div> 
 
 <div data-role="content">
@@ -50,18 +47,29 @@
 <form id="loginForm" data-ajax="false">
 <div data-role="fieldcontain" class="ui-hide-label">
 <label> Socio </label>
-<input type="text" name="username" id="username" value="" placeholder="Socio" />
+<input type="text" name="username" id="username" value="" placeholder="Socio" tabindex="1" />
 </div>
 
 <div data-role="fieldcontain" class="ui-hide-label">
 <label> Contraseña </label>
-<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+<input type="password" name="password" id="password" value="" placeholder="Contraseña" tabindex="2" />
 </div>
 
-<input type="submit" value="Entrar" id="submitButton">
+<input type="submit" value="Entrar" id="submitButton" tabindex="3" />
 </form>
 
 </div>
+
+<div data-role="footer" class="ui-bar" data-position="fixed"> 
+	<div data-role="navbar">
+		<ul>
+			<li><a href="contacto.html" data-icon="phone">Contacto</a></li>
+			<li><a href="tel:955089393" data-role="button" data-icon="plus">Urgencias</a></li>
+			<li><a href="logout.html" data-role="button" data-icon="power" class="private">Logout</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+
 </div>
 
 <script>
