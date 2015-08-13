@@ -27,7 +27,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener('pageshow', this.onPageShow, false);
+        document.addEventListener('load', this.onLoad, false);
     },
     // deviceready Event Handler
     //
@@ -36,7 +36,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-	onPageShow: function() {
+	onLoad: function() {
         alert('Received Event: ' + id);
 		$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 		if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
