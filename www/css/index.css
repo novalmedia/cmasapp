@@ -48,3 +48,5 @@ margin-bottom: 10px;font-size:28pt;box-shadow: 0px 0px 10px #999;}
  .private {display: none !important;}
  
  #map-canvas { position: absolute; top:0;left:0;width: 100%; height: 100%; padding: 0; }
+ 
+ #petlist li a img {border-radius:50%;}
