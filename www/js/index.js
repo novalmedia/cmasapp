@@ -36,7 +36,6 @@ function checkPreAuth() {
 	if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
 		$("#username", form).val(window.localStorage["username"]);
 		$("#password", form).val(window.localStorage["password"]);
-		handleLogin();
 	}
 }
 

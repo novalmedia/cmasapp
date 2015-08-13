@@ -65,6 +65,7 @@
 					$("#psocio").html(window.localStorage["socio"]);
 					$("#pname").html(window.localStorage["name"]);
 					$(".private").removeClass('private');
+					$(".loginlink").hide();
 				}
 				var defaultLatLng = new google.maps.LatLng(37.352387, -6.059264);  // Default to Hollywood, CA when no geolocation support
 				drawMap(defaultLatLng);  // No geolocation support, show default map

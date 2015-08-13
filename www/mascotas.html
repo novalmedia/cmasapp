@@ -68,6 +68,7 @@
 					$("#psocio").html(window.localStorage["socio"]);
 					$("#pname").html(window.localStorage["name"]);
 					$(".private").removeClass('private');
+					$(".loginlink").hide();
 					var uid = window.localStorage["userid"];
 					$.post("http://www.clubmascodin.com/app/getpets.php", {uid:uid}, function(res) {
 						if (res!=false){

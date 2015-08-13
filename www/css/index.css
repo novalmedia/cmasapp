@@ -19,7 +19,7 @@ a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
  .header { background-color:#3c91dc !important; }
  .header h1 { color: #ffffff; text-shadow: none;}
 
-#home .ui-panel-wrapper {background: url(../images/index_bg.jpg) no-repeat center top;background-size:contain;}
+#home .ui-panel-wrapper {background: url(http://clubmascodin.com/app/index_bg.jpg) no-repeat center top;background-size:contain;}
 
 
 #loginPage {}
