@@ -65,11 +65,8 @@ var app = {
  
             case 'message':
               // this is the actual push notification. its format depends on the data model from the push server
-              console.log('message = '+e.message+' msgcnt = '+e.msgcnt);
+              console.log('message = '+e.message);
 			  window.localStorage["messages"] += '<div class="ui-corner-all custom-corners">'
-												+ '  <div class="ui-bar ui-bar-a">'
-												+ '    <h3>'+e.title+'</h3>'
-												+ '  </div>'
 												+ '  <div class="ui-body ui-body-a">'
 												+ '    <p>'+e.message+'</p>'
 												+ '  </div>'
