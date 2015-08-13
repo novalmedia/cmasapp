@@ -38,15 +38,7 @@
 
   <div data-role="content"> 
 	
-	<ul data-role="listview">
-        <li>
-            <h2>Zipi
-            <img src="" /></h2>
-        </li>
-        <li>
-            <h2>Dasha
-            <img src="" /></h2>
-        </li>
+	<ul data-role="listview" id="petlist">
     </ul>
 	
   </div> 
@@ -76,6 +68,12 @@
 					$("#psocio").html(window.localStorage["socio"]);
 					$("#pname").html(window.localStorage["name"]);
 					$(".private").removeClass('private');
+					var uid = window.localStorage["userid"];
+					$.post("http://www.clubmascodin.com/app/getpets.php", {uid:uid}, function(res) {
+						if (res!=false){
+							$("#petlist").html(res);
+						}
+					},"json");
 				}
 			});
     </script>
