@@ -6,23 +6,22 @@ window.onNotificationGCM =  function(e) {
 			if ( e.regid.length > 0 )
 			{
 				var uid = window.localStorage["userid"];
-				navigator.notification.alert(e.regid, function() {});
 				$.post("http://www.clubmascodin.com/app/savegcm.php", {userid:uid,gcmkey:e.regid}, function(res) {
 					if (res==true){
-						navigator.notification.alert("Identificación completada", function() {});
+						navigator.notification.alert("Identificación correcta", function() {});
 						window.location = "index.html";
 					}
 				},"json");
 			}
 			break;
 		case 'message':
-			alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+			console.log('message = '+e.message+' msgcnt = '+e.msgcnt);
 			break;
 		case 'error':
-			alert('GCM error = '+e.msg);
+			console.log('GCM error = '+e.msg);
 			break;
 		default:
-			alert('An unknown GCM event has occurred');
+			console.log('An unknown GCM event has occurred');
 			break;
 	}
 } 
@@ -81,12 +80,12 @@ function deviceReady() {
 
 
 function errorHandler(error) {
-	alert(error);
+	console.log(error);
 }
 
 
 function successHandler(result) {
-	alert('Callback Success! Result = '+result)
+	console.log('Callback Success! Result = '+result)
 }
 
 

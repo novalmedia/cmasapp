@@ -38,8 +38,8 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
-		/* var pushNotification = window.plugins.pushNotification;
-		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"349344466742","ecb":"app.onNotificationGCM"}); */
+		var pushNotification = window.plugins.pushNotification;
+		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"349344466742","ecb":"app.onNotificationGCM"});
     },
 	errorHandler:function(error) {
 		//alert(error);
@@ -65,15 +65,15 @@ var app = {
  
             case 'message':
               // this is the actual push notification. its format depends on the data model from the push server
-              alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+              console.log('message = '+e.message+' msgcnt = '+e.msgcnt);
             break;
  
             case 'error':
-              alert('GCM error = '+e.msg);
+              console.log('GCM error = '+e.msg);
             break;
  
             default:
-              alert('An unknown GCM event has occurred');
+              console.log('An unknown GCM event has occurred');
               break;
         }
     }
