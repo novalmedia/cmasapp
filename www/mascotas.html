@@ -71,7 +71,8 @@
 					var uid = window.localStorage["userid"];
 					$.post("http://www.clubmascodin.com/app/getpets.php", {uid:uid}, function(res) {
 						if (res!=false){
-							$("#petlist").html(res).listview("refresh");
+							$("#petlist").html(res);
+							$("#petlist").listview("refresh");
 						}
 					},"json");
 				}
