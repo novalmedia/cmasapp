@@ -40,6 +40,12 @@ var app = {
         console.log('Received Event: ' + id);
 		var pushNotification = window.plugins.pushNotification;
 		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"349344466742","ecb":"app.onNotificationGCM"});
+		$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+		if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+			$("#psocio").html(window.localStorage["socio"]);
+			$("#pname").html(window.localStorage["name"]);
+			$(".private").removeClass('private');
+		}
     },
 	errorHandler:function(error) {
 		//alert(error);

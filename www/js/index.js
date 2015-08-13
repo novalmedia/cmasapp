@@ -76,6 +76,12 @@ function handleLogin() {
 
 function deviceReady() {
 	$("#loginForm").submit(handleLogin);
+	$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+	if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+		$("#psocio").html(window.localStorage["socio"]);
+		$("#pname").html(window.localStorage["name"]);
+		$(".private").removeClass('private');
+	}
 }
 
 
