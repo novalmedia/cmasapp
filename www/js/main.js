@@ -27,7 +27,6 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        document.addEventListener('load', this.onLoad, false);
     },
     // deviceready Event Handler
     //
@@ -36,18 +35,9 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-	onLoad: function() {
-        alert('Received Event: ' + id);
-		$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
-		if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
-			$("#psocio").html(window.localStorage["socio"]);
-			$("#pname").html(window.localStorage["name"]);
-			$(".private").removeClass('private');
-		}
-    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        alert('Received Event: ' + id);
+        console.log('Received Event: ' + id);
 		var pushNotification = window.plugins.pushNotification;
 		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"349344466742","ecb":"app.onNotificationGCM"});
 		

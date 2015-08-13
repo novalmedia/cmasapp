@@ -68,6 +68,15 @@
 </div>
 	<script type="text/javascript">
             app.initialize();
+			$(document).on("pageshow", function(){
+				alert('Received Event: pageshow');
+				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+					$("#psocio").html(window.localStorage["socio"]);
+					$("#pname").html(window.localStorage["name"]);
+					$(".private").removeClass('private');
+				}
+			});
         </script>
 </body>
 </html>
