@@ -58,7 +58,7 @@ function handleLogin() {
 				window.localStorage["socio"] = res.username;
 				window.localStorage["name"] = res.name;
 				window.localStorage["email"] = res.email;
-				window.localStorage["messages"] = Array();
+				window.localStorage["messages"] = '';
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
