@@ -62,7 +62,10 @@
 </div><!-- /footer -->
 </div>
 	<script type="text/javascript">
-			alert('OK');
+			app.initialize();
+			$(document).bind("mobileinit", function () {
+				$.mobile.ajaxEnabled = false;
+			});
 			$(document).on("pageshow", '#contacto', function(){
 				alert('Received Event: pageshow');
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
@@ -71,7 +74,6 @@
 					$("#pname").html(window.localStorage["name"]);
 					$(".private").removeClass('private');
 				}
-				app.initialize();
 			});
         </script>
 </body>

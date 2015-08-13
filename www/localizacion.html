@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
 <body>
-<div data-role="page" id="contacto"> 
+<div data-role="page" id="localizacion"> 
   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
     <h1>Club Mascodin</h1> 
     <a href="#panel" id="abre_panel" class="panel-btn"></a> 
@@ -58,7 +58,10 @@
 </div>
 	<script type="text/javascript">
             app.initialize();
-			$(window).load(function(){
+			$(document).bind("mobileinit", function () {
+				$.mobile.ajaxEnabled = false;
+			});
+			$(document).on("pageshow", '#localizacion', function(){
 				var defaultLatLng = new google.maps.LatLng(37.352387, -6.059264);  // Default to Hollywood, CA when no geolocation support
 				drawMap(defaultLatLng);  // No geolocation support, show default map
 				function drawMap(latlng) {
