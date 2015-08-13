@@ -53,13 +53,12 @@ var app = {
             case 'registered':
                 if ( e.regid.length > 0 )
 			{
-				var uid = window.localStorage["userid"];
+				/* var uid = window.localStorage["userid"];
 				$.post("http://www.clubmascodin.com/app/savegcm.php", {userid:uid,gcmkey:e.regid}, function(res) {
 					if (res==true){
-						navigator.notification.alert("Identificación completada", function() {});
-						window.location = "index.html";
+
 					}
-				},"json");
+				},"json"); */
 			}
             break;
  
