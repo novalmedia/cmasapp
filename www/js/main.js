@@ -71,6 +71,7 @@ var app = {
 												+ '    <p>'+e.message+'</p>'
 												+ '  </div>'
 												+ '</div>';
+				window.location = "mensajes.html";								
             break;
  
             case 'error':
