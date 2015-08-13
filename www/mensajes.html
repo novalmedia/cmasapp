@@ -66,7 +66,7 @@
 					$("#pname").html(window.localStorage["name"]);
 					$("#name").val(window.localStorage["name"]);
 					$("#email").val(window.localStorage["email"]);
-					$('#content').html(window.localStorage["messages"].join());
+					$('#content').html(window.localStorage["messages"].join(' '));
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
