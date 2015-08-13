@@ -7,11 +7,6 @@
 
 <title>Club Mascodin</title>
     
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery.mobile.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="PushNotification.js"></script>
 
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
@@ -43,7 +38,7 @@
 
   <div data-role="content"> 
 	
- <ul data-role="listview">
+	<ul data-role="listview">
         <li>
             <h2>Zipi
             <img src="" /></h2>
@@ -65,9 +60,25 @@
 	</div><!-- /navbar -->
 </div><!-- /footer -->
 </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="PushNotification.js"></script>
+
 	<script type="text/javascript">
-            app.initialize();
-			
-        </script>
+			app.initialize();
+			$(document).bind("mobileinit", function () {
+				$.mobile.ajaxEnabled = false;
+			});
+			$(document).on("pageshow", '#mascotas', function(){
+				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+					$("#psocio").html(window.localStorage["socio"]);
+					$("#pname").html(window.localStorage["name"]);
+					$(".private").removeClass('private');
+				}
+			});
+    </script>
+    <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>
 </html>

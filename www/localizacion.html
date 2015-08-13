@@ -60,6 +60,12 @@
 				$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#localizacion', function(){
+				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+					$("#psocio").html(window.localStorage["socio"]);
+					$("#pname").html(window.localStorage["name"]);
+					$(".private").removeClass('private');
+				}
 				var defaultLatLng = new google.maps.LatLng(37.352387, -6.059264);  // Default to Hollywood, CA when no geolocation support
 				drawMap(defaultLatLng);  // No geolocation support, show default map
 				function drawMap(latlng) {

@@ -56,6 +56,14 @@
 			$(document).bind("mobileinit", function () {
 				$.mobile.ajaxEnabled = false;
 			});
+			$(document).on("pageshow", '#home', function(){
+				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+					$("#psocio").html(window.localStorage["socio"]);
+					$("#pname").html(window.localStorage["name"]);
+					$(".private").removeClass('private');
+				}
+			});
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>

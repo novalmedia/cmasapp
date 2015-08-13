@@ -72,7 +72,6 @@
 				$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#contacto', function(){
-				alert('Received Event: pageshow');
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
