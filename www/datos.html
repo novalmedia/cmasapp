@@ -72,21 +72,7 @@
 
 	<script type="text/javascript">
 			//app.initialize();
-			$(document).bind("mobileinit", function () {
-				$.mobile.ajaxEnabled = false;
-			});
-			$(document).on("pageshow", '#datos', function(){
-				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
-				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
-					$("#psocio").html(window.localStorage["socio"]);
-					$("#pname").html(window.localStorage["name"]);
-					$("#name").val(window.localStorage["name"]);
-					$("#email").val(window.localStorage["email"]);
-					$(".private").removeClass('private');
-					$(".loginlink").hide();
-				}
-				
-			});
+			
 	var pictureSource;   
     var destinationType; 
     document.addEventListener("deviceready",onDeviceReady,false);
