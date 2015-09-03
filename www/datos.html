@@ -121,7 +121,7 @@
 				var data='?data';
 				$('.userdata').each(function(input){
 				alert(input.attr('name'));
-					data += '&' + $(input).attr('name')+'='+$(input).val();
+					data += '&' + input.attr('name')+'='+input.val();
 				})
 				var uid = window.localStorage["userid"];
 				$.post("http://www.clubmascodin.com/app/saveuserdata.php"+data, {userid:uid}, function(res) {
