@@ -95,7 +95,7 @@ var app = {
 	 getPhoto: function() {
 		 alert(destinationType.FILE_URI);
 		// Retrieve image file location from specified source
-		navigator.camera.getPicture(app.onPhotoDataSuccess, app.onFail, { quality: 10,
+		navigator.camera.getPicture(function(imageData){alert(imageData);}, app.onFail, { quality: 10,
 		destinationType: destinationType.FILE_URI,
 		sourceType: sourceType.PHOTOLIBRARY});
 	},
