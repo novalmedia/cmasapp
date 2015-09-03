@@ -9,9 +9,9 @@
     
 
 <link rel="stylesheet" type="text/css" href="css/index.css" />
-<!-- <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
 
-<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" /> -->
+<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
 <body>
 <div data-role="page" id="datos"> 
@@ -48,16 +48,17 @@
 	 </div>
 	 <div data-role="fieldcontain">
 		<label for="email">Fondo de pantalla:</label>
-		<button onclick="app.capturePhoto();">Hacer foto</button> <br>
-		<button onclick="app.getPhoto();">Galería</button>
-		<div id="picpreview" style="width: 100%; height: 100px; display: inline-block;background-color: #ddd;">
+		<button onclick="capturePhoto();">Capture Photo</button> <br>
+		<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+		<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+		<img style="display:none;" id="largeImage" src="" />
 	 </div>
 	 </form>
   </div> 
 <div data-role="footer" class="ui-bar" data-position="fixed"> 
 	<div data-role="navbar">
 		<ul>
-			<li><a href="cam.html" data-icon="phone">Contacto</a></li>
+			<li><a href="contacto.html" data-icon="phone">Contacto</a></li>
 			<li><a href="tel:955089393"  data-icon="plus">Urgencias</a></li>
 			<li><a href="logout.html"  data-icon="power" class="private">Logout</a></li>
 		</ul>
@@ -70,7 +71,7 @@
 	<script type="text/javascript" src="PushNotification.js"></script>
 
 	<script type="text/javascript">
-			app.initialize();
+			//app.initialize();
 			$(document).bind("mobileinit", function () {
 				$.mobile.ajaxEnabled = false;
 			});
@@ -86,10 +87,38 @@
 				}
 				
 			});
-		
-			
-			
+	var pictureSource;   
+    var destinationType; 
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    function onDeviceReady() {
+        pictureSource=navigator.camera.PictureSourceType;
+        destinationType=navigator.camera.DestinationType;
+    }
+    function onPhotoDataSuccess(imageData) {
+      var smallImage = document.getElementById('smallImage');
+      smallImage.style.display = 'block';
+      smallImage.src = "data:image/jpeg;base64," + imageData;
+    }
+    function onPhotoURISuccess(imageURI) {
+	//alert(imageURI);
+      var largeImage = document.getElementById('largeImage');
+      largeImage.style.display = 'block';
+      largeImage.src = imageURI;
+    }
+    function capturePhoto() {
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
+    }
+    function getPhoto(source) {
+      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+        destinationType: destinationType.FILE_URI,
+        sourceType: source });
+    }
+    function onFail(message) {
+      alert('Failed because: ' + message);
+    }
     </script>
-    <!-- <script type="text/javascript" src="js/jquery.mobile.js"></script> -->
+    <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>
 </html>
