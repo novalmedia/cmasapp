@@ -8,10 +8,6 @@
 <title>Club Mascodin</title>
     
 
-<link rel="stylesheet" type="text/css" href="css/index.css" />
-<link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
-
-<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
 <body>
 <div data-role="page" id="datos"> 
@@ -84,7 +80,7 @@
       smallImage.src = "data:image/jpeg;base64," + imageData;
     }
     function onPhotoURISuccess(imageURI) {
-	//alert(imageURI);
+	alert(imageURI);
       var largeImage = document.getElementById('largeImage');
       largeImage.style.display = 'block';
       largeImage.src = imageURI;
@@ -102,6 +98,5 @@
       alert('Failed because: ' + message);
     }
     </script>
-    <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>
 </html>
