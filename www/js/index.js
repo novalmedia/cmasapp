@@ -54,16 +54,17 @@ function handleLogin() {
 				//store
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;
-				window.localStorage["userid"] = res["userdata"].id;
-				window.localStorage["socio"] = res["userdata"].username;
-				window.localStorage["name"] = res["userdata"].name;
-				window.localStorage["email"] = res["userdata"].email;
+				window.localStorage["userid"] = res.userdata.id;
+				window.localStorage["socio"] = res.userdata.username;
+				window.localStorage["name"] = res.userdata.name;
+				window.localStorage["email"] = res.userdata.email;
 				
-				window.localStorage["birthDate"] = res["userprofile"].birthDate;
-				window.localStorage["address1"] = res["userprofile"].address1;
-				window.localStorage["city"] = res["userprofile"].city;
-				window.localStorage["postal_code"] = res["userprofile"].postal_code;
-				window.localStorage["phone"] = res["userprofile"].phone;
+				window.localStorage["birthDate"] = res.userprofile.birthDate;
+				window.localStorage["address1"] = res.userprofile.address1;
+				window.localStorage["city"] = res.userprofile.city;
+				window.localStorage["postal_code"] = res.userprofile.postal_code;
+				window.localStorage["phone"] = res.userprofile.phone;
+				
 				window.localStorage["messages"] = '';
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
