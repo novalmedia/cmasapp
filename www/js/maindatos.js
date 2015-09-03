@@ -103,16 +103,14 @@ var app = {
 		alert(fail);
 	},
 	onPhotoDataSuccess: function(imageData) {
-		$('body').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
-		//$('.ui-panel-wrapper').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
-		$('.ui-page, .ui-content, .ui-panel-wrapper').css('background', 'transparent');
-		//$('#picpreview').html(imageData);
+		$('body').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover').css('background-position','center center');
+		$('.ui-page, .ui-content').css('background', 'transparent');
+		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.6)');
 	},
 	onPhotoFileSuccess: function(imageData) { 
-		$('body').css('background-image','url(' + imageData + ')').css('background-size','cover');
-//		$('.ui-panel-wrapper').css('background-image','url(' + imageData + ')').css('background-size','cover');
-		$('.ui-page, .ui-content, .ui-panel-wrapper').css('background', 'transparent');
-		//$('#picpreview').html(imageData);
+		$('body').css('background-image','url(' + imageData + ')').css('background-size','cover').css('background-position','center center');
+		$('.ui-page, .ui-content').css('background', 'transparent');
+		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.6)');
 	}
 	
 };
