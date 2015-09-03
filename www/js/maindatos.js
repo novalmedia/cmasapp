@@ -104,11 +104,13 @@ var app = {
 	},
 	onPhotoDataSuccess: function(imageData) {
 		$('body').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
+		$('.ui-panel-wrapper').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
 		$('.ui-page, .ui-content, .ui-btn').css('background', 'transparent');
 		//$('#picpreview').html(imageData);
 	},
 	onPhotoFileSuccess: function(imageData) { 
 		$('body').css('background-image','url(' + imageData + ')').css('background-size','cover');
+		$('.ui-panel-wrapper').css('background-image','url(' + imageData + ')').css('background-size','cover');
 		$('.ui-page, .ui-content, .ui-btn').css('background', 'transparent');
 		//$('#picpreview').html(imageData);
 	}
