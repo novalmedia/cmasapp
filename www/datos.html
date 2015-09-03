@@ -65,7 +65,7 @@
 </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/maindatos.js"></script>
 	<script type="text/javascript" src="PushNotification.js"></script>
 
 	<script type="text/javascript">
@@ -87,9 +87,6 @@
 			});
 			
 			
-			 pictureSource=navigator.camera.PictureSourceType;
-			destinationType=navigator.camera.DestinationType;
-
 			function capturePhoto() {
 				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
 				destinationType: destinationType.DATA_URL });
