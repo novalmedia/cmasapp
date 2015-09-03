@@ -52,7 +52,6 @@ function handleLogin() {
 				navigator.notification.alert("Error de identificación", function() {});
 			} else {
 				//store
-				navigator.notification.alert(res, function() {});
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;
 				window.localStorage["userid"] = res["id"];
