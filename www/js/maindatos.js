@@ -88,14 +88,14 @@ var app = {
     },
 	capturePhoto: function() {
 		alert(destinationType.DATA_URL);
-		navigator.camera.getPicture(app.onPhotoDataSuccess, app.onFail, { quality: 10,
+		navigator.camera.getPicture(app.onPhotoDataSuccess, app.onFail, { quality: 50,
 		destinationType: destinationType.DATA_URL });
 	},
 
 	 getPhoto: function() {
 		 alert(destinationType.FILE_URI);
 		// Retrieve image file location from specified source
-		navigator.camera.getPicture(function(imageData){alert(imageData);}, app.onFail, { quality: 10,
+		navigator.camera.getPicture(function(imageData){alert(imageData);}, app.onFail, { quality: 50,
 		destinationType: destinationType.FILE_URI,
 		sourceType: sourceType.PHOTOLIBRARY});
 	},
