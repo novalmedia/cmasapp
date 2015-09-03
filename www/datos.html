@@ -118,13 +118,13 @@
 				}
 			});
 			function saveData(){
-				var data='?data';
-				$('.userdata').each(function(input){
-				alert(input.attr('name'));
-					data += '&' + input.attr('name')+'='+input.val();
+				var data= {};
+				$('.userdata').each(function(){
+					data[$(this).attr('name')] = $(this).val();
 				})
+			
 				var uid = window.localStorage["userid"];
-				$.post("http://www.clubmascodin.com/app/saveuserdata.php"+data, {userid:uid}, function(res) {
+				$.post("http://www.clubmascodin.com/app/saveuserdata.php"+data, {userid:uid, data: data}, function(res) {
 					if (res==true){
 						navigator.notification.alert("Datos guardados", function() {});
 					}
