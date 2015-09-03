@@ -94,7 +94,7 @@
 
 			function getPhoto() {
 				// Retrieve image file location from specified source
-				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 10,
+				navigator.camera.getPicture(onPhotoFileSuccess, onFail, { quality: 10,
 				destinationType: navigator.camera.DestinationType.FILE_URL,
 				sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
 			}
@@ -108,6 +108,11 @@
 				alert(imageData);
 				//$('#picpreview').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
 				$('#picpreview').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
+			}
+			function onPhotoFileSuccess(imageData) {
+				alert(imageData);
+				//$('#picpreview').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
+				$('#picpreview').css('background-image','url(' + imageData + ')').css('background-size','cover');
 			}
 			
     </script>
