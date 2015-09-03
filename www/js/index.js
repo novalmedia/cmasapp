@@ -9,7 +9,7 @@ window.onNotificationGCM =  function(e) {
 				$.post("http://www.clubmascodin.com/app/savegcm.php", {userid:uid,gcmkey:e.regid}, function(res) {
 					if (res==true){
 						navigator.notification.alert("Identificación correcta", function() {});
-						window.location = "index.html";
+						window.location = "datos.html";
 					}
 				},"json");
 			}
