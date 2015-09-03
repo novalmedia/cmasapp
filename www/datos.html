@@ -46,6 +46,11 @@
 		<label for="email">Email:</label>
 		<input type="text" name="email" id="email" value="" />
 	 </div>
+	 <div data-role="fieldcontain">
+		<label for="email">Fondo de pantalla:</label>
+		<button onclick="capturePhoto();">Hacer foto</button> <br>
+		<button onclick="getPhoto();">Galería</button>
+	 </div>
 	 </form>
   </div> 
 <div data-role="footer" class="ui-bar" data-position="fixed"> 
@@ -78,7 +83,34 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
+				
 			});
+			
+			
+			 pictureSource=navigator.camera.PictureSourceType;
+			destinationType=navigator.camera.DestinationType;
+
+			function capturePhoto() {
+				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+				destinationType: destinationType.DATA_URL });
+			}
+
+			function getPhoto() {
+				// Retrieve image file location from specified source
+				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+				destinationType: destinationType.DATA_URL,
+				sourceType: pictureSource.PHOTOLIBRARY});
+			}
+			
+			function onFail(fail)
+			{
+				console.log(fail);
+			}
+			
+			function onPhotoDataSuccess(imageData) {
+				$(body).css('background-image','data:image/jpeg;base64,' + imageData).css('background-position','cover');
+			}
+			
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>
