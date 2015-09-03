@@ -37,7 +37,7 @@
   </div> 
 
   <div data-role="content"> 
-	 <form>
+	 <form id="userForm" onsubmit="saveData();return false;">
 	 <div data-role="fieldcontain">
 		<label for="name">Nombre:</label>
 		<input type="text" name="name" id="name" value="" />
@@ -46,7 +46,31 @@
 		<label for="email">Email:</label>
 		<input type="text" name="email" id="email" value="" />
 	 </div>
+	  <div data-role="fieldcontain">
+		<label for="birthDate">Fecha de nacimiento:</label>
+		<input type="text" name="birthDate" id="birthDate" value="" />
+	 </div>
+	 <div data-role="fieldcontain">
+		<label for="address1">Direcci&oacute;n:</label>
+		<input type="text" name="address1" id="address1" value="" />
+	 </div>
+	 <div data-role="fieldcontain">
+		<label for="city">Localidad:</label>
+		<input type="text" name="city" id="city" value="" />
+	 </div>
+	 <div data-role="fieldcontain">
+		<label for="postal_code">C&oacute;digo Postal:</label>
+		<input type="text" name="postal_code" id="postal_code" value="" />
+	 </div>
+	 <div data-role="fieldcontain">
+		<label for="phone">Tel&eacute;fono:</label>
+		<input type="text" name="phone" id="phone" value="" />
+	 </div>
+	 <div data-role="fieldcontain">
+		<button type="submit">Guardar</button>
+	 </div>
 	 </form>
+	 <hr />
 	 <div data-role="fieldcontain">
 		<label for="email">Fondo de pantalla:</label>
 		<button onclick="app.capturePhoto();">Hacer foto</button> <br>
@@ -93,7 +117,18 @@
 					$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.6)');
 				}
 			});
-		
+			function saveData(){
+				var data='?data';
+				$('#userForm input').each(function(input){
+					data += '&' + $(input).attr('name')+'='+$(input).val();
+				})
+				var uid = window.localStorage["userid"];
+				$.post("http://www.clubmascodin.com/app/saveuserdata.php"+data, {userid:uid}, function(res) {
+					if (res==true){
+						navigator.notification.alert("Datos guardados", function() {});
+					}
+				},"json");
+			}
 			
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
