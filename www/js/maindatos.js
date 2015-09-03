@@ -106,6 +106,7 @@ var app = {
 		$('body').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover').css('background-position','center center');
 		$('.ui-page, .ui-content').css('background', 'transparent');
 		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.7)');
+		var uid = window.localStorage["userid"];
 		$.post("http://www.clubmascodin.com/app/savebg.php", {userid:uid,bg:imageData}, function(res) {
 			if (res==true){
 				navigator.notification.alert("Fondo guardado", function() {});
@@ -119,6 +120,7 @@ var app = {
 		$('body').css('background-image','url(' + imageData + ')').css('background-size','cover').css('background-position','center center');
 		$('.ui-page, .ui-content').css('background', 'transparent');
 		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.7)');
+		var uid = window.localStorage["userid"];
 		$.post("http://www.clubmascodin.com/app/savebg.php", {userid:uid,bg:imageData}, function(res) {
 			if (res==true){
 				navigator.notification.alert("Fondo guardado", function() {});
