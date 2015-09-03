@@ -87,11 +87,13 @@ var app = {
         }
     },
 	capturePhoto: function() {
+		alert('capturePhoto');
 		navigator.camera.getPicture(app.onPhotoDataSuccess, app.onFail, { quality: 10,
 		destinationType: destinationType.DATA_URL });
 	},
 
 	 getPhoto: function() {
+		 alert('getPhoto');
 		// Retrieve image file location from specified source
 		navigator.camera.getPicture(app.onPhotoDataSuccess, app.onFail, { quality: 10,
 		destinationType: destinationType.FILE_URL,
@@ -106,7 +108,7 @@ var app = {
 	onPhotoDataSuccess: function(imageData) {
 		alert(imageData);
 		//$('#picpreview').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
-		$('#picpreview').html(imageData);
+		//$('#picpreview').html(imageData);
 	}
 };
 
