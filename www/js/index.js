@@ -54,16 +54,16 @@ function handleLogin() {
 				//store
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;
-				window.localStorage["userid"] = res.userdata.id;
-				window.localStorage["socio"] = res.userdata.username;
-				window.localStorage["name"] = res.userdata.name;
-				window.localStorage["email"] = res.userdata.email;
+				window.localStorage["userid"] = res.id;
+				window.localStorage["socio"] = res.username;
+				window.localStorage["name"] = res.name;
+				window.localStorage["email"] = res.email;
 				
-				window.localStorage["birthDate"] = res.userprofile.profile.birthDate;
-				window.localStorage["address1"] = res.userprofile.profile.address1;
-				window.localStorage["city"] = res.userprofile.profile.city;
-				window.localStorage["postal_code"] = res.userprofile.profile.postal_code;
-				window.localStorage["phone"] = res.userprofile.profile.phone;
+				window.localStorage["birthDate"] = res.birthDate;
+				window.localStorage["address1"] = res.address1;
+				window.localStorage["city"] = res.city;
+				window.localStorage["postal_code"] = res.postal_code;
+				window.localStorage["phone"] = res.phone;
 				
 				window.localStorage["messages"] = '';
 				//window.localStorage["userdata"] = res;
