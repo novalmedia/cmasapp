@@ -7,62 +7,6 @@
 
 <title>Club Mascodin</title>
     
-
-</head>
-<body>
-<div data-role="page" id="datos"> 
-  <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
-    <h1>Club Mascodin</h1> 
-    <a href="#panel" id="abre_panel" class="panel-btn"></a> 
-  </div> 
-   
-  <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="push"> 
-	<div id="menu_header">
-		<img src="images/club.png" /><br>
-		<h2><a href="login.html" class="login">Mi perfil</a></h2>
-		<h3 class="private">Hola <span id="pname"></span></h3>
-		<h4 class="private">Socio: <span id="psocio"></span></h4>
-	</div>
-     <ul data-role="listview" class="private"> 
-      <li data-icon="false"><a href="datos.html" class="panel_li"  >Mis datos</a></li> 
-      <li data-icon="false"><a href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
-      <li data-icon="false"><a href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
-    </ul> 
-
-   
-  </div> 
-
-  <div data-role="content"> 
-	 <form>
-	 <div data-role="fieldcontain">
-		<label for="name">Nombre:</label>
-		<input type="text" name="name" id="name" value="" />
-	 </div>
-	 <div data-role="fieldcontain">
-		<label for="email">Email:</label>
-		<input type="text" name="email" id="email" value="" />
-	 </div>
-	 <div data-role="fieldcontain">
-		<label for="email">Fondo de pantalla:</label>
-		<button onclick="capturePhoto();">Capture Photo</button> <br>
-		<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-		<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-		<img style="display:none;" id="largeImage" src="" />
-	 </div>
-	 </form>
-  </div> 
-<div data-role="footer" class="ui-bar" data-position="fixed"> 
-	<div data-role="navbar">
-		<ul>
-			<li><a href="contacto.html" data-icon="phone">Contacto</a></li>
-			<li><a href="tel:955089393"  data-icon="plus">Urgencias</a></li>
-			<li><a href="logout.html"  data-icon="power" class="private">Logout</a></li>
-		</ul>
-	</div><!-- /navbar -->
-</div><!-- /footer -->
-</div>
-   
-
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
     var pictureSource;   // picture source
@@ -137,5 +81,61 @@
       alert('Failed because: ' + message);
     }
     </script>
+
+</head>
+<body>
+<div data-role="page" id="datos"> 
+  <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
+    <h1>Club Mascodin</h1> 
+    <a href="#panel" id="abre_panel" class="panel-btn"></a> 
+  </div> 
+   
+  <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="push"> 
+	<div id="menu_header">
+		<img src="images/club.png" /><br>
+		<h2><a href="login.html" class="login">Mi perfil</a></h2>
+		<h3 class="private">Hola <span id="pname"></span></h3>
+		<h4 class="private">Socio: <span id="psocio"></span></h4>
+	</div>
+     <ul data-role="listview" class="private"> 
+      <li data-icon="false"><a href="datos.html" class="panel_li"  >Mis datos</a></li> 
+      <li data-icon="false"><a href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
+      <li data-icon="false"><a href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
+    </ul> 
+
+   
+  </div> 
+
+  <div data-role="content"> 
+	 <form>
+	 <div data-role="fieldcontain">
+		<label for="name">Nombre:</label>
+		<input type="text" name="name" id="name" value="" />
+	 </div>
+	 <div data-role="fieldcontain">
+		<label for="email">Email:</label>
+		<input type="text" name="email" id="email" value="" />
+	 </div>
+	 <div data-role="fieldcontain">
+		<label for="email">Fondo de pantalla:</label>
+		<button onclick="capturePhoto();">Capture Photo</button> <br>
+		<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+		<img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
+		<img style="display:none;" id="largeImage" src="" />
+	 </div>
+	 </form>
+  </div> 
+<div data-role="footer" class="ui-bar" data-position="fixed"> 
+	<div data-role="navbar">
+		<ul>
+			<li><a href="contacto.html" data-icon="phone">Contacto</a></li>
+			<li><a href="tel:955089393"  data-icon="plus">Urgencias</a></li>
+			<li><a href="logout.html"  data-icon="power" class="private">Logout</a></li>
+		</ul>
+	</div><!-- /navbar -->
+</div><!-- /footer -->
+</div>
+   
+
 </body>
 </html>
