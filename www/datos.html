@@ -40,31 +40,31 @@
 	 <div id="userForm" >
 		 <div data-role="fieldcontain">
 			<label for="name">Nombre:</label>
-			<input class="userdata" type="text" name="name" id="name" value="Nombre" />
+			<input class="userdata" type="text" name="name" id="name" value="" />
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="email">Email:</label>
-			<input class="userdata" type="text" name="email" id="email" value="Email" />
+			<input class="userdata" type="text" name="email" id="email" value="" />
 		 </div>
 		  <div data-role="fieldcontain">
 			<label for="birthDate">Fecha de nacimiento:</label>
-			<input class="userdata" type="text" name="birthDate" id="birthDate" value="birthDate" />
+			<input class="userdata" type="text" name="birthDate" id="birthDate" value="" />
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="address1">Direcci&oacute;n:</label>
-			<input class="userdata" type="text" name="address1" id="address1" value="address1" />
+			<input class="userdata" type="text" name="address1" id="address1" value="" />
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="city">Localidad:</label>
-			<input class="userdata" type="text" name="city" id="city" value="city" />
+			<input class="userdata" type="text" name="city" id="city" value="" />
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="postal_code">C&oacute;digo Postal:</label>
-			<input class="userdata" type="text" name="postal_code" id="postal_code" value="postal_code" />
+			<input class="userdata" type="text" name="postal_code" id="postal_code" value="" />
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="phone">Tel&eacute;fono:</label>
-			<input class="userdata" type="text" name="phone" id="phone" value="phone" />
+			<input class="userdata" type="text" name="phone" id="phone" value="" />
 		 </div>
 		 <div data-role="fieldcontain">
 			<button onclick="saveData();">Guardar</button>
@@ -104,6 +104,12 @@
 					$("#pname").html(window.localStorage["name"]);
 					$("#name").val(window.localStorage["name"]);
 					$("#email").val(window.localStorage["email"]);
+					$("#birthDate").val(window.localStorage["birthDate"]);
+					$("#address1").val(window.localStorage["address1"]);
+					$("#city").val(window.localStorage["city"]);
+					$("#postal_code").val(window.localStorage["postal_code"]);
+					$("#phone").val(window.localStorage["phone"]);
+					
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
@@ -121,6 +127,7 @@
 				var data= {};
 				$('.userdata').each(function(){
 					data[$(this).attr('name')] = $(this).val();
+					window.localStorage[$(this).attr('name')] = $(this).val();
 				})
 			
 				var uid = window.localStorage["userid"];
