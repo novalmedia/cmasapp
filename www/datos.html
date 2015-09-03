@@ -88,13 +88,13 @@
 			
 			
 			function capturePhoto() {
-				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 10,
 				destinationType: destinationType.DATA_URL });
 			}
 
 			function getPhoto() {
 				// Retrieve image file location from specified source
-				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 10,
 				destinationType: destinationType.DATA_URL,
 				sourceType: pictureSource.PHOTOLIBRARY});
 			}
@@ -105,6 +105,7 @@
 			}
 			
 			function onPhotoDataSuccess(imageData) {
+				alert(imageData);
 				$('.ui-panel-wrapper').css('background-image','data:image/jpeg;base64,' + imageData).css('background-position','cover');
 			}
 			
