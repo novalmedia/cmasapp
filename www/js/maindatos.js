@@ -107,7 +107,7 @@ var app = {
 		$('.ui-page, .ui-content, .ui-btn').css('background', 'transparent');
 		//$('#picpreview').html(imageData);
 	},
-	onPhotoFileSuccess: function(imageData) {
+	onPhotoFileSuccess: function(imageData) { 
 		$('body').css('background-image','url(' + imageData + ')').css('background-size','cover');
 		$('.ui-page, .ui-content, .ui-btn').css('background', 'transparent');
 		//$('#picpreview').html(imageData);
