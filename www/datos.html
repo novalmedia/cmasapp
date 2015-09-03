@@ -118,11 +118,11 @@
 				}
 			});
 			function saveData(){
+				alert('tesas');
 				var data='?data';
 				$('.userdata').each(function(input){
 					data += '&' + $(input).attr('name')+'='+$(input).val();
 				})
-				alert(data);
 				var uid = window.localStorage["userid"];
 				$.post("http://www.clubmascodin.com/app/saveuserdata.php"+data, {userid:uid}, function(res) {
 					if (res==true){
