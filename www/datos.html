@@ -124,7 +124,7 @@
 				})
 			
 				var uid = window.localStorage["userid"];
-				$.post("http://www.clubmascodin.com/app/saveuserdata.php"+data, {userid:uid, data: data}, function(res) {
+				$.post("http://www.clubmascodin.com/app/saveuserdata.php", {userid:uid, data: data}, function(res) {
 					if (res==true){
 						navigator.notification.alert("Datos guardados", function() {});
 					}
