@@ -59,11 +59,11 @@ function handleLogin() {
 				window.localStorage["name"] = res.userdata.name;
 				window.localStorage["email"] = res.userdata.email;
 				
-				window.localStorage["birthDate"] = res.userprofile.birthDate;
-				window.localStorage["address1"] = res.userprofile.address1;
-				window.localStorage["city"] = res.userprofile.city;
-				window.localStorage["postal_code"] = res.userprofile.postal_code;
-				window.localStorage["phone"] = res.userprofile.phone;
+				window.localStorage["birthDate"] = res.userprofile.profile.birthDate;
+				window.localStorage["address1"] = res.userprofile.profile.address1;
+				window.localStorage["city"] = res.userprofile.profile.city;
+				window.localStorage["postal_code"] = res.userprofile.profile.postal_code;
+				window.localStorage["phone"] = res.userprofile.profile.phone;
 				
 				window.localStorage["messages"] = '';
 				//window.localStorage["userdata"] = res;
