@@ -33,6 +33,8 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+		destinationType = navigator.camera.DestinationType;
+		sourceType = navigator.camera.PictureSourceType;
         app.receivedEvent('deviceready');
 		
     },
@@ -83,6 +85,28 @@ var app = {
               console.log('An unknown GCM event has occurred');
               break;
         }
-    }
+    },
+	capturePhoto: function() {
+		navigator.camera.getPicture(app.onPhotoDataSuccess, app.onFail, { quality: 10,
+		destinationType: destinationType.DATA_URL });
+	},
+
+	 getPhoto: function() {
+		// Retrieve image file location from specified source
+		navigator.camera.getPicture(app.onPhotoDataSuccess, app.onFail, { quality: 10,
+		destinationType: destinationType.FILE_URL,
+		sourceType: sourceType.PHOTOLIBRARY});
+	},
+	
+	onFail: function(fail)
+	{
+		alert(fail);
+	},
+	
+	onPhotoDataSuccess: function(imageData) {
+		alert(imageData);
+		//$('#picpreview').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
+		$('#picpreview').html(imageData);
+	}
 };
 

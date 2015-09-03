@@ -48,8 +48,8 @@
 	 </div>
 	 <div data-role="fieldcontain">
 		<label for="email">Fondo de pantalla:</label>
-		<button onclick="capturePhoto();">Hacer foto</button> <br>
-		<button onclick="getPhoto();">Galería</button>
+		<button onclick="app.capturePhoto();">Hacer foto</button> <br>
+		<button onclick="app.getPhoto();">Galería</button>
 		<div id="picpreview" style="width: 100%; height: 100px; display: inline-block;background-color: #ddd;">
 	 </div>
 	 </form>
@@ -87,28 +87,7 @@
 				
 			});
 		
-			function capturePhoto() {
-				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 10,
-				destinationType: navigator.camera.DestinationType.DATA_URL });
-			}
-
-			function getPhoto() {
-				// Retrieve image file location from specified source
-				navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 10,
-				destinationType: navigator.camera.DestinationType.FILE_URL,
-				sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
-			}
 			
-			function onFail(fail)
-			{
-				alert(fail);
-			}
-			
-			function onPhotoDataSuccess(imageData) {
-				alert(imageData);
-				//$('#picpreview').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover');
-				$('#picpreview').html(imageData);
-			}
 			
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
