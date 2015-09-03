@@ -107,7 +107,7 @@
 			
 			function onPhotoDataSuccess(imageData) {
 				//alert(imageData);
-				$('#picpreview').css('background-image','data:image/jpeg;base64,' + imageData).css('background-position','cover');
+				$('#picpreview').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-position','cover');
 			}
 			
     </script>
