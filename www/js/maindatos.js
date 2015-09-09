@@ -97,7 +97,11 @@ var app = {
 		destinationType: destinationType.FILE_URI,
 		sourceType: sourceType.PHOTOLIBRARY});
 	},
-	
+	disableBG: function() {
+		// Retrieve image file location from specified source
+		window.localStorage['bgpictureData'] = '';
+		window.localStorage['bgpictureFile'] = '';
+	},
 	onFail: function(fail)
 	{
 		alert(fail);

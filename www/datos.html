@@ -22,7 +22,7 @@
    
   <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="push"> 
 	<div id="menu_header">
-		<img src="images/club.png" /><br>
+		<a href="index.html"><img src="images/club.png" /></a><br>
 		<h2><a href="login.html" class="login">Mi perfil</a></h2>
 		<h3 class="private">Hola <span id="pname"></span></h3>
 		<h4 class="private">Socio: <span id="psocio"></span></h4>
@@ -77,6 +77,7 @@
 		<label for="email">Fondo de pantalla:</label>
 		<button onclick="app.capturePhoto();">Hacer foto</button> <br>
 		<button onclick="app.getPhoto();">Galería</button>
+		<button id="disablebtn" style="display: none;" onclick="app.disableBG();">Quitar fondo</button>
 	 </div>
   </div> 
 <div data-role="footer" class="ui-bar" data-position="fixed"> 
@@ -119,10 +120,12 @@
 					$('body').css('background-image','url(data:image/jpeg;base64,' + window.localStorage['bgpictureData'] + ')').css('background-size','cover').css('background-position','center center');
 					$('.ui-page, .ui-content').css('background', 'transparent');
 					$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.5)');
+					$('#disablebtn').show();
 				} else if(window.localStorage['bgpictureFile'] != ''){
 					$('body').css('background-image','url(' + window.localStorage['bgpictureFile'] + ')').css('background-size','cover').css('background-position','center center');
 					$('.ui-page, .ui-content').css('background', 'transparent');
 					$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.5)');
+					$('#disablebtn').show();
 				}
 			});
 			function saveData(){
