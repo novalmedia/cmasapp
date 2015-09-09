@@ -101,11 +101,14 @@ var app = {
 		// Retrieve image file location from specified source
 		window.localStorage['bgpictureData'] = '';
 		window.localStorage['bgpictureFile'] = '';
-		$('body').css('background-image','none').css('background-size','inherit').css('background-position','inherit');
+		//$('body').css('background-image','none').css('background-size','inherit').css('background-position','inherit');
+		navigator.notification.alert("Fondo guardado", function() {
+			window.location = "datos.html";				
+		});
 	},
 	onFail: function(fail)
 	{
-		alert(fail);
+		console.log(fail);
 	},
 	onPhotoDataSuccess: function(imageData) {
 		$('body').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover').css('background-position','center center');
