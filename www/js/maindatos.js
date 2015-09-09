@@ -102,9 +102,8 @@ var app = {
 		window.localStorage['bgpictureData'] = '';
 		window.localStorage['bgpictureFile'] = '';
 		//$('body').css('background-image','none').css('background-size','inherit').css('background-position','inherit');
-		navigator.notification.alert("Fondo guardado", function() {
-			window.location = "datos.html";				
-		});
+		navigator.notification.alert("Fondo guardado", function() {	});
+		window.location = "datos.html";				
 	},
 	onFail: function(fail)
 	{
@@ -113,7 +112,7 @@ var app = {
 	onPhotoDataSuccess: function(imageData) {
 		$('body').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover').css('background-position','center center');
 		$('.ui-page, .ui-content').css('background', 'transparent');
-		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.7)');
+		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.5)');
 		var uid = window.localStorage["userid"];
 		$.post("http://www.clubmascodin.com/app/savebg.php", {userid:uid,bg:imageData}, function(res) {
 			if (res==true){
@@ -127,7 +126,7 @@ var app = {
 	onPhotoFileSuccess: function(imageData) { 
 		$('body').css('background-image','url(' + imageData + ')').css('background-size','cover').css('background-position','center center');
 		$('.ui-page, .ui-content').css('background', 'transparent');
-		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.7)');
+		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.5)');
 		var uid = window.localStorage["userid"];
 		$.post("http://www.clubmascodin.com/app/savebg.php", {userid:uid,bg:imageData}, function(res) {
 			if (res==true){
