@@ -101,6 +101,7 @@ var app = {
 		// Retrieve image file location from specified source
 		window.localStorage['bgpictureData'] = '';
 		window.localStorage['bgpictureFile'] = '';
+		$('body').css('background-image','none').css('background-size','inherit').css('background-position','inherit');
 	},
 	onFail: function(fail)
 	{
