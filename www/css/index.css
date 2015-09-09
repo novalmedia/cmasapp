@@ -1,4 +1,4 @@
-body {background-color: #ffffff !important; background-repeat: no-repeat;}
+body {background-color: #ffffff !important; background-repeat: no-repeat;background-position: fixed;}
 
 nav ul {box-sizing: border-box;padding:0;width: 100%;float: left;}
 nav ul li {display: inline-block;
