@@ -27,7 +27,7 @@ a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
  #panel ul li a{ font-weight: 700;
 font-size: 1.5em;
 text-shadow: none;
-color: #ffffff;
+color: #ffffff; 
 text-decoration: none;}
  
 #home {background: url(http://clubmascodin.com/app/index_bg.jpg) no-repeat center top;background-size:contain;}
