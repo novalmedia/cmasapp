@@ -15,39 +15,36 @@
 </head>
 <body>
 <div data-role="page" id="mensajes"> 
-  <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
-    <h1>Club Mascodin</h1> 
+   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
+	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
+    <h1>CLUB MASCODIN</h1> 
     <a href="#panel" id="abre_panel" class="panel-btn"></a> 
   </div> 
    
-  <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="push"> 
+  <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="overlay"> 
 	<div id="menu_header">
-		<a href="index.html"><img src="images/club.png" /></a><br />
-		<h2><a href="login.html" class="login">Mi perfil</a></h2>
+		<a href="index.html"><img src="images/clubw.png" /></a><br />
+		<h2 class="loginlink"><a href="login.html" class="login">Login</a></h2>
 		<h3 class="private">Hola <span id="pname"></span></h3>
 		<h4 class="private">Socio: <span id="psocio"></span></h4>
 	</div>
      <ul data-role="listview" class="private"> 
-      <li data-icon="false"><a href="datos.html" class="panel_li"  >Mis datos</a></li> 
-      <li data-icon="false"><a href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
-      <li data-icon="false"><a href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
+      <li data-icon="user"><a href="datos.html" class="panel_li"  >Mis datos</a></li> 
+      <li data-icon="heart"><a href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
+      <li data-icon="mail"><a href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
     </ul> 
-
+	<ul data-role="listview" class="public">
+			<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
+			<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
+			<li><a class="ui-icon-power ui-btn-icon-left" href="logout.html" class="private">Logout</a></li>
+		</ul>
    
   </div> 
 
   <div data-role="content" id="content"> 
 	
   </div> 
-<div data-role="footer" class="ui-bar" data-position="fixed"> 
-	<div data-role="navbar">
-		<ul>
-			<li><a href="contacto.html" data-icon="phone">Contacto</a></li>
-			<li><a href="tel:955089393"  data-icon="plus">Urgencias</a></li>
-			<li><a href="logout.html"  data-icon="power" class="private">Logout</a></li>
-		</ul>
-	</div><!-- /navbar -->
-</div><!-- /footer -->
+
 </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
