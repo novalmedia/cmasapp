@@ -23,13 +23,14 @@ a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
  #panel .login{ color: #ffffff;text-shadow: none;}
  #panel h3{ color: #ffffff;text-shadow: none;}
  #panel h4{ color: #ffffff;text-shadow: none;}
+ #panel ul li { margin: 0.7em 0;}
  #panel ul li a{ font-weight: 700;
 font-size: 1.5em;
 text-shadow: none;
 color: #ffffff;
 text-decoration: none;}
  
-#home .ui-panel-wrapper {background: url(http://clubmascodin.com/app/index_bg.jpg) no-repeat center top;background-size:contain;}
+#home {background: url(http://clubmascodin.com/app/index_bg.jpg) no-repeat center top;background-size:contain;}
 
 /* #panel {margin-top: 0 !important;} */
 
