@@ -17,10 +17,12 @@ a.menu {width: 15%;float: left;}
 a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
 .headerimg {width: 80%;float: right;}
  .header { background-color:#3c91dc !important; }
- .header h1 { color: #ffffff; text-shadow: none;font-size: 1.5em !important;padding: 0.2em 0px !important;}
+ .header h1 { color: #ffffff; text-shadow: none;font-size: 1.1em !important;padding: 0.5em 0px !important;}
 
  #panel{ background-color:#3c91dc !important;}
  #panel .login{ color: #ffffff;text-shadow: none;}
+ #panel h3{ color: #ffffff;text-shadow: none;}
+ #panel h4{ color: #ffffff;text-shadow: none;}
  #panel ul li a{ font-weight: 700;
 font-size: 1.5em;
 text-shadow: none;

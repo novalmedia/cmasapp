@@ -19,26 +19,26 @@
     <a href="#panel" id="abre_panel" class="panel-btn"></a> 
   </div> 
    
-  <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="overlay"> 
+ <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="overlay"> 
 	<div id="menu_header">
-		<a href="index.html"><img src="images/clubw.png" /></a><br />
-		<h2 class="loginlink"><a href="login.html" class="login">Login</a></h2>
 		<h3 class="private">Hola <span id="pname"></span></h3>
 		<h4 class="private">Socio: <span id="psocio"></span></h4>
 	</div>
      <ul data-role="listview" class="private"> 
-      <li data-icon="user"><a href="datos.html" class="panel_li"  >Mis datos</a></li> 
-      <li data-icon="heart"><a href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
-      <li data-icon="mail"><a href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
+      <li><a class="ui-icon-user ui-btn-icon-left"  href="datos.html" class="panel_li"  >Mis datos</a></li> 
+      <li><a class="ui-icon-heart ui-btn-icon-left"  href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
+      <li><a class="ui-icon-mail ui-btn-icon-left"  href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
     </ul> 
+	<p></p>
 	<ul data-role="listview" class="public">
+			<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Login</a></li>
 			<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
+			<li><a class="ui-icon-navigation ui-btn-icon-left" href="localizacion.html">Localizacion</a></li>
 			<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
-			<li><a class="ui-icon-power ui-btn-icon-left" href="logout.html" class="private">Logout</a></li>
+			<li><a class="ui-icon-power ui-btn-icon-left" href="logout.html" class="private">Salir</a></li>
 		</ul>
    
   </div> 
-
   
     <div role="main" class="ui-content" id="map-canvas">
        
