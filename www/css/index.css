@@ -17,7 +17,7 @@ a.menu {width: 15%;float: left;}
 a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
 .headerimg {width: 80%;float: right;}
  .header { background-color:#3c91dc !important; }
- .header h1 { color: #ffffff; text-shadow: none;font-size: 1em !important;padding: 0.5em 0px !important;}
+ .header h1 { color: #ffffff; text-shadow: none;font-size: 1em !important;padding: 0.7em 0px !important;}
 
  #panel{ background-color:rgba(60,145,220, 0.9) !important;}
  #panel .login{ color: #ffffff;text-shadow: none;}
