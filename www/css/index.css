@@ -78,3 +78,5 @@ margin-top: 5px !important;
  
  #petlist li a img {border-radius:50%;}
  address {text-align: center;}
+ 
+ .ui-btn-icon-right {float: right;}
