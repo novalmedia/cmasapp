@@ -29,6 +29,10 @@ font-size: 1.5em;
 text-shadow: none;
 color: #ffffff; 
 text-decoration: none;}
+ #panel ul li.selected { background: rgba(255,255,255,0.9);}
+ #panel ul li.selected a{ color: rgb(60,145,220);}
+
+
  
 #home {background: url(http://clubmascodin.com/app/index_bg.jpg) no-repeat center top;background-size:contain;}
 
@@ -73,3 +77,4 @@ margin-top: 5px !important;
  #map-canvas { position: absolute; top:0;left:0;width: 100%; height: 100%; padding: 0; }
  
  #petlist li a img {border-radius:50%;}
+ address {text-align: center;}

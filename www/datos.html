@@ -17,7 +17,7 @@
 <div data-role="page" id="datos"> 
   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
 	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
-    <h1>CLUB MASCODIN</h1> 
+		<h1>CLUB MASCODIN</h1> 
     <a href="#panel" id="abre_panel" class="panel-btn"></a> 
   </div> 
    
@@ -26,19 +26,16 @@
 		<h3 class="private">Hola <span id="pname"></span></h3>
 		<h4 class="private">Socio: <span id="psocio"></span></h4>
 	</div>
-     <ul data-role="listview" class="private"> 
-      <li><a class="ui-icon-user ui-btn-icon-left"  href="datos.html" class="panel_li"  >Mis datos</a></li> 
-      <li><a class="ui-icon-heart ui-btn-icon-left"  href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
-      <li><a class="ui-icon-mail ui-btn-icon-left"  href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
-    </ul> 
-	<p></p>
-	<ul data-role="listview" class="public">
-			<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
-			<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
-			<li><a class="ui-icon-navigation ui-btn-icon-left" href="localizacion.html">Localizacion</a></li>
-			<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
-			<li><a class="ui-icon-power ui-btn-icon-left" href="logout.html" class="private">Salir</a></li>
-		</ul>
+    <ul data-role="listview"> 
+		<li class="private selected"><a class="ui-icon-user ui-btn-icon-left"  href="datos.html" class="panel_li"  >Mis datos</a></li> 
+		<li class="private"><a class="ui-icon-heart ui-btn-icon-left"  href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
+		<li class="private"><a class="ui-icon-mail ui-btn-icon-left"  href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
+		<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
+		<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
+		<li><a class="ui-icon-navigation ui-btn-icon-left" href="localizacion.html">Localizacion</a></li>
+		<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
+		<li><a class="ui-icon-power ui-btn-icon-left" href="logout.html" class="private">Salir</a></li>
+	</ul>
    
   </div> 
 
@@ -47,44 +44,83 @@
 		<h3>Datos personales</h3>
 		 <div data-role="fieldcontain">
 			<label for="name">Nombre:</label>
-			<input class="userdata" type="text" name="name" id="name" value="" />
+			<span id="name"></span>
+			<a href="#" onclick="$(this).next().show();$(this).hide(); return false;" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
+			<div style="display: none;">
+				<input class="userdata" type="text" name="name" id="iname" value="" />
+				<a href="#" onclick="saveData(); return false;" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
+				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();return false;" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+			</div>
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="email">Email:</label>
-			<input class="userdata" type="text" name="email" id="email" value="" />
+			<span id="email"></span>
+			<a href="#" onclick="$(this).next().show();$(this).hide(); return false;" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
+			<div style="display: none;">
+			<input class="userdata" type="text" name="email" id="iemail" value="" style="display: none;" />
+			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
+				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();return false;" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+			</div>
 		 </div>
 		  <div data-role="fieldcontain">
 			<label for="birthDate">Fecha de nacimiento:</label>
-			<input class="userdata" type="text" name="birthDate" id="birthDate" value="" />
+			<span id="birthDate"></span>
+			<a href="#" onclick="$(this).next().show();$(this).hide(); return false;" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
+			<div style="display: none;">
+			<input class="userdata" type="text" name="birthDate" id="ibirthDate" value="" style="display: none;" />
+			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
+				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();return false;" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+			</div>
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="address1">Direcci&oacute;n:</label>
-			<input class="userdata" type="text" name="address1" id="address1" value="" />
+			<span id="address1"></span>
+			<a href="#" onclick="$(this).next().show();$(this).hide(); return false;" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
+			<div style="display: none;">
+			<input class="userdata" type="text" name="address1" id="iaddress1" value="" style="display: none;" />
+			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
+				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();return false;" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+			</div>
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="city">Localidad:</label>
-			<input class="userdata" type="text" name="city" id="city" value="" />
+			<span id="city"></span>
+			<a href="#" onclick="$(this).next().show();$(this).hide(); return false;" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
+			<div style="display: none;">
+			<input class="userdata" type="text" name="city" id="icity" value="" style="display: none;" />
+			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
+				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();return false;" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+			</div>
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="postal_code">C&oacute;digo Postal:</label>
-			<input class="userdata" type="text" name="postal_code" id="postal_code" value="" />
+			<span id="postal_code"></span>
+			<a href="#" onclick="$(this).next().show();$(this).hide(); return false;" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
+			<div style="display: none;">
+			<input class="userdata" type="text" name="postal_code" id="ipostal_code" value="" style="display: none;" />
+			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
+				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();return false;" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+			</div>
 		 </div>
 		 <div data-role="fieldcontain">
 			<label for="phone">Tel&eacute;fono:</label>
-			<input class="userdata" type="text" name="phone" id="phone" value="" />
-		 </div>
-		 <div data-role="fieldcontain">
-			<button onclick="saveData();">Guardar</button>
+			<span id="phone"></span>
+			<a href="#" onclick="$(this).next().show();$(this).hide(); return false;" class="ui-btn ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
+			<div style="display: none;">
+			<input class="userdata" type="text" name="phone" id="iphone" value="" style="display: none;" />
+			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
+				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();return false;" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+			</div>
 		 </div>
 	 </div>
-	 <hr />
+	<!-- <hr />
 	 <h3>Configuraci&oacute;n</h3>
 	 <div data-role="fieldcontain">
 		<label for="email">Fondo de pantalla:</label>
 		<button onclick="app.capturePhoto();">Hacer foto</button> <br>
 		<button onclick="app.getPhoto();">Galería</button> <br>
 		<button id="disablebtn" style="display: none;" onclick="app.disableBG();">Quitar fondo</button>
-	 </div>
+	 </div>-->
   </div> 
 
 </div>
@@ -103,13 +139,19 @@
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
 					$("#pname").html(window.localStorage["name"]);
-					$("#name").val(window.localStorage["name"]);
-					$("#email").val(window.localStorage["email"]);
-					$("#birthDate").val(window.localStorage["birthDate"]);
-					$("#address1").val(window.localStorage["address1"]);
-					$("#city").val(window.localStorage["city"]);
-					$("#postal_code").val(window.localStorage["postal_code"]);
-					$("#phone").val(window.localStorage["phone"]);
+					$("#iname").val(window.localStorage["name"]);
+					$("#iemail").val(window.localStorage["email"]);
+					$("#email").html(window.localStorage["email"]);
+					$("#ibirthDate").val(window.localStorage["birthDate"]);
+					$("#birthDate").html(window.localStorage["birthDate"]);
+					$("#iaddress1").val(window.localStorage["address1"]);
+					$("#address1").html(window.localStorage["address1"]);
+					$("#icity").val(window.localStorage["city"]);
+					$("#city").html(window.localStorage["city"]);
+					$("#ipostal_code").val(window.localStorage["postal_code"]);
+					$("#postal_code").html(window.localStorage["postal_code"]);
+					$("#iphone").val(window.localStorage["phone"]);
+					$("#phone").html(window.localStorage["phone"]);
 					
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
