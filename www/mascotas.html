@@ -53,7 +53,7 @@
 	<script type="text/javascript">
 			app.initialize();
 			$(document).bind("mobileinit", function () {
-				$.mobile.ajaxEnabled = false;
+				//$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#mascotas', function(){
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
@@ -63,10 +63,13 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 					var uid = window.localStorage["userid"];
+				//	var uid = 149;
 					$.post("http://www.clubmascodin.com/app/getpets.php", {uid:uid}, function(res) {
 						if (res!=false){
-							$("#petlist").html(res);
-							$("#petlist").listview("refresh");
+							$("body").prepend(res);
+							//$("#petlist").listview("refresh");
+							$('#mascotas').remove();
+							$('div[data-role="page"]').trigger('pagecreate');
 						}
 					},"json");
 				}
@@ -79,6 +82,30 @@
 					$('.ui-content').css('background', 'transparent');
 					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
 				}
+			});
+			$(document).off('swipeleft').on('swipeleft', 'div[data-role="page"]', function(event){     
+				if(event.handled !== true) // This will prevent event triggering more then once 
+				{     
+					var nextpage = $.mobile.activePage.next('div[data-role="page"]'); 
+					// swipe using id of next page if exists 
+					if (nextpage.length > 0) { 
+						$.mobile.changePage(nextpage, {transition: "slide", reverse: false}, true, true); 
+					} 
+					event.handled = true; 
+				} 
+				return false;         
+			}); 
+
+			$(document).off('swiperight').on('swiperight', 'div[data-role="page"]', function(event){   
+				if(event.handled !== true) // This will prevent event triggering more then once 
+				{       
+					var prevpage = $(this).prev('div[data-role="page"]'); 
+					if (prevpage.length > 0) { 
+						$.mobile.changePage(prevpage, {transition: "slide", reverse: true}, true, true); 
+					} 
+					event.handled = true; 
+				} 
+				return false;             
 			});
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
