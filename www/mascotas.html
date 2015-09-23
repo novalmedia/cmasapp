@@ -53,7 +53,7 @@
 	<script type="text/javascript">
 			app.initialize();
 			$(document).bind("mobileinit", function () {
-				//$.mobile.ajaxEnabled = false;
+				$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#mascotas', function(){
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
@@ -70,7 +70,7 @@
 							//$("#petlist").listview("refresh");
 							//alert(res);
 							$('#mascotas').remove();
-							$('body').trigger('pagecreate');
+							$('body').trigger('create');
 						}
 					},"html");
 				}
