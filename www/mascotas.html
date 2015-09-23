@@ -71,7 +71,7 @@
 							$('#mascotas').remove();
 							$('div[data-role="page"]').trigger('pagecreate');
 						}
-					},"json");
+					},"html");
 				}
 				if(window.localStorage['bgpictureData'] != ''){
 					$('body').css('background-image','url(data:image/jpeg;base64,' + window.localStorage['bgpictureData'] + ')').css('background-size','cover').css('background-position','center center');
