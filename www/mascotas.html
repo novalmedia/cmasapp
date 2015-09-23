@@ -68,9 +68,9 @@
 						if (res!=false){
 							$("body").prepend(res);
 							//$("#petlist").listview("refresh");
-							alert(res);
+							//alert(res);
 							$('#mascotas').remove();
-							$('div[data-role="page"]').trigger('pagecreate');
+							$('body').trigger('pagecreate');
 						}
 					},"html");
 				}
