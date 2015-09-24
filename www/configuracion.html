@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
 <body>
-<div data-role="page" id="datos"> 
+<div data-role="page" id="configuracion"> 
   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
 	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
 		<h1>CLUB MASCODIN</h1> 
@@ -34,7 +34,7 @@
 		<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
 		<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
 		<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
-		<li><a class="ui-icon-power ui-btn-icon-left" href="logout.html" class="private">Salir</a></li>
+		<li class="private"><a class="ui-icon-power ui-btn-icon-left" href="logout.html">Salir</a></li>
 	</ul>
    
   </div> 
@@ -62,7 +62,7 @@
 			$(document).bind("mobileinit", function () {
 				//$.mobile.ajaxEnabled = false;
 			});
-			$(document).on("pageshow", '#datos', function(){
+			$(document).on("pageshow", '#configuracion', function(){
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
