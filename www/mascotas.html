@@ -70,7 +70,7 @@
 							//$("#petlist").listview("refresh");
 							//alert(res);
 							$('#mascotas').remove();
-							$('body').trigger('create');
+							$("div:jqmData(role='page')").trigger('create');
 						}
 					},"html");
 				}

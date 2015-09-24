@@ -178,6 +178,8 @@
 				$.post("http://www.clubmascodin.com/app/saveuserdata.php", {userid:uid, data: data}, function(res) {
 					if (res==true){
 						navigator.notification.alert("Datos guardados", function() {});
+						$("div:jqmData(role='fieldcontain') > div").hide();
+						$('.ui-icon-edit').show();
 					}
 				},"json");
 			}
