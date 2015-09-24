@@ -14,58 +14,55 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
 <body>
-<div data-role="page" id="contacto"> 
+<div data-role="page" id="datos"> 
   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
 	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
-    <h1>CLUB MASCODIN</h1> 
+		<h1>CLUB MASCODIN</h1> 
     <a href="#panel" id="abre_panel" class="panel-btn"></a> 
   </div> 
    
-  <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="overlay"> 
+   <div data-role="panel" id="panel" data-position-fixed="true" data-position="left" data-display="overlay"> 
 	<div id="menu_header">
 		<h3 class="private">Hola <span id="pname"></span></h3>
 		<h4 class="private">Socio: <span id="psocio"></span></h4>
 	</div>
-   <ul data-role="listview"> 
+    <ul data-role="listview"> 
 		<li class="private"><a class="ui-icon-user ui-btn-icon-left"  href="datos.html" class="panel_li"  >Mis datos</a></li> 
 		<li class="private"><a class="ui-icon-heart ui-btn-icon-left"  href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
 		<li class="private"><a class="ui-icon-mail ui-btn-icon-left"  href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
-		<li class="private"><a class="ui-icon-gear ui-btn-icon-left"  href="configuracion.html" class="panel_li"  >Configuracion</a></li> 
+		<li class="private selected"><a class="ui-icon-gear ui-btn-icon-left"  href="configuracion.html" class="panel_li"  >Configuracion</a></li> 
 		<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
-		<li class="selected"><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
+		<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
 		<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
 		<li><a class="ui-icon-power ui-btn-icon-left" href="logout.html" class="private">Salir</a></li>
 	</ul>
    
   </div> 
-  <div data-role="content"> 
-	  <div class=" ui-body ui-body-a ui-corner-all">
-		<address>
-			P.I.S.A. C. Diseño, 4, Nave 8 <br>
-			41927 Mairena del Aljarafe, Sevilla<br>
-			955 08 93 93<br>
-			<a href="mailto:info@clubmascodin.com">info@clubmascodin.com</a>
-		</address>
-		<p><a href="localizacion.html" data-role="button">Ver mapa</a></p>
-		<address>
-			<h3>Horario:</h3>
-			Lunes a Viernes:<br> De 10:00 a 14:00h y<br> de 17:00 a 21:00h<br> Sábados:<br> 10:00 a 14:00h
-			</address>
-	  </div>
+
+  <div data-role="content" style="margin-bottom: 100%;"> 
+	 <div id="userForm" >
+		<hr />
+	 <h3>Configuraci&oacute;n</h3>
+	 <div data-role="fieldcontain">
+		<label for="email">Fondo de pantalla:</label>
+		<button onclick="app.capturePhoto();">Hacer foto</button> <br>
+		<button onclick="app.getPhoto();">Galería</button> <br>
+		<button id="disablebtn" style="display: none;" onclick="app.disableBG();">Quitar fondo</button>
+	 </div>
   </div> 
 
 </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/maindatos.js"></script>
 	<script type="text/javascript" src="PushNotification.js"></script>
 
 	<script type="text/javascript">
 			app.initialize();
 			$(document).bind("mobileinit", function () {
-				$.mobile.ajaxEnabled = false;
+				//$.mobile.ajaxEnabled = false;
 			});
-			$(document).on("pageshow", '#contacto', function(){
+			$(document).on("pageshow", '#datos', function(){
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
@@ -83,6 +80,8 @@
 					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
 				}
 			});
+			
+			
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>
