@@ -184,6 +184,18 @@
 				},"json");
 			}
 			
+	 $(".userdata").focus(function(e) {
+		var container = $( this ).parent(),
+			scrollTo = $( this );
+
+		setTimeout((function() {
+			container.animate({
+			scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+			});
+		}), 500);
+
+	});
+			
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>
