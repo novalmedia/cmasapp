@@ -189,8 +189,8 @@
 			scrollTo = $( this );
 
 		setTimeout((function() {
-			container.animate({
-			scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+			$("html, body").animate({
+			scrollTop: scrollTo.offset().top - ($('.header').height()*2)
 			});
 		}), 500);
 
