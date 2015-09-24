@@ -103,7 +103,7 @@ var app = {
 		window.localStorage['bgpictureFile'] = '';
 		//$('body').css('background-image','none').css('background-size','inherit').css('background-position','inherit');
 		navigator.notification.alert("Fondo guardado", function() {	});
-		window.location = "datos.html";				
+		window.location = "configuracion.html";				
 	},
 	onFail: function(fail)
 	{
@@ -119,7 +119,7 @@ var app = {
 				navigator.notification.alert("Fondo guardado", function() {});
 				window.localStorage['bgpictureData'] = imageData;
 				window.localStorage['bgpictureFile'] = '';
-				window.location = "datos.html";
+				window.location = "configuracion.html";
 			}
 		},"json");
 		
@@ -134,7 +134,7 @@ var app = {
 				navigator.notification.alert("Fondo guardado", function() {});
 				window.localStorage['bgpictureData'] = '';
 				window.localStorage['bgpictureFile'] = imageData;
-				window.location = "datos.html";
+				window.location = "configuracion.html";
 			}
 		},"json");
 
