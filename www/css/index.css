@@ -81,6 +81,6 @@ margin-top: 5px !important;
  
  .ui-btn-icon-right {float: right;}
  
-.ui-icon-edit {background-color: rgba(66,144,219, 0.6) !important}
-.ui-icon-check {background-color: rgba(66,219,84, 0.6) !important}
-.ui-icon-delete {background-color: rgba(219,106,66, 0.6) !important}
+.ui-icon-edit {background-color: rgba(66,144,219, 0.7) !important}
+.ui-icon-check {background-color: rgba(66,219,84, 0.7) !important}
+.ui-icon-delete {background-color: rgba(219,106,66, 0.7) !important}
