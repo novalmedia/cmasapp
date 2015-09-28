@@ -39,9 +39,6 @@
   </div> 
   <div data-role="content"> 
 	
-	<ul data-role="listview" id="petlist">
-    </ul>
-	
   </div> 
 
 </div>
@@ -66,11 +63,10 @@
 				//	var uid = 149;
 					$.post("http://www.clubmascodin.com/app/getpets.php", {uid:uid}, function(res) {
 						if (res!=false){
-							$("body").prepend(res);
-							//$("#petlist").listview("refresh");
-							//alert(res);
-							$('#mascotas').remove();
-							$("div:jqmData(role='page')").trigger('create');
+							$("div:jqmData(role='content')").html(res);
+							contentHeight = $(window).height() - $("div:jqmData(role='header')").height();
+							$('.petprofile').css('height',contentHeight);
+							$('.petprofile img').css('height',((contentHeight/100)*80)+'px');
 						}
 					},"html");
 				}
@@ -83,6 +79,7 @@
 					$('.ui-content').css('background', 'transparent');
 					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
 				}
+				
 			});
 			$(document).off('swipeleft').on('swipeleft', 'div[data-role="page"]', function(event){     
 				if(event.handled !== true) // This will prevent event triggering more then once 

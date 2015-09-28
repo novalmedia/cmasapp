@@ -84,3 +84,7 @@ margin-top: 5px !important;
 .ui-icon-edit {background-color: rgba(66,144,219, 0.7) !important}
 .ui-icon-check {background-color: rgba(66,219,84, 0.7) !important}
 .ui-icon-delete {background-color: rgba(219,106,66, 0.7) !important}
+
+
+.petprofile {width: 100%;text-align: center;}
+.petprofile img{float: none; clear:both;}
