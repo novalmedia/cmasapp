@@ -66,10 +66,10 @@
 
 			function change_background( new_image_source ) {
 				var myimage = $( '#home' );
-				myimage.css( 'background-image', new_image_source );
+				myimage.css( 'background-image', 'url('+new_image_source+')' );
 				setTimeout( function () {
 					change_background( 'http://clubmascodin.com/app/index_bg2.jpg' );
-				}, 10000);
+				}, 3000);
 			}
 
 
