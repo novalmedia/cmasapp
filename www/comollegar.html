@@ -160,7 +160,8 @@
 
             $(document).on("pagebeforeshow", "#comollegar", function() {
                 // find current position and on success initialize map and calculate the route
-                navigator.geolocation.getCurrentPosition(locSuccess, locError);
+				 var options = {timeout:10000,enableHighAccuracy:true,maximumAge:0};
+                navigator.geolocation.getCurrentPosition(locSuccess, locError, options);
             });
 
         </script>
