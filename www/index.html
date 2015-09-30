@@ -60,7 +60,19 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
+				change_background('http://clubmascodin.com/app/index_bg.jpg');
 			});
+			
+
+			function change_background( new_image_source ) {
+				var myimage = $( '#home' );
+				myimage.css( 'background-image', new_image_source );
+				setTimeout( function () {
+					change_background( 'http://clubmascodin.com/app/index_bg2.jpg' );
+				}, 10000);
+			}
+
+
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>
