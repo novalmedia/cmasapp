@@ -116,6 +116,7 @@
 
             function locError(error) {
                // the current position could not be located
+			   navigator.notification.alert("Debes activar la geolocalización por GPS.", function() {	});
             }
 
             function locSuccess(position) {
