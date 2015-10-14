@@ -88,3 +88,7 @@ margin-top: 5px !important;
 
 .petprofile {width: 100%;text-align: center;}
 .petprofile img{float: none; clear:both;}
+
+#facebook .ui-content {padding: 0 !important;}
+#blog .ui-content {padding: 0 !important;}
+#citas .ui-content {padding: 0 !important;}
