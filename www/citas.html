@@ -64,7 +64,8 @@
 					$(".loginlink").hide();
 					$('#iframecontent').attr('src','http://www.clubmascodin.com/index.php?option=com_pbbooking&view=pbbooking&Itemid=176&tmpl=component&user='+window.localStorage["username"]+'&passw='+window.localStorage["password"]);
 				}
-				$('#iframecontent').height($("#citas").outerHeight());
+				height = $(window).height() - $('.ui-header').height();
+				$('#iframecontent').height(height);
 			});
 			
 

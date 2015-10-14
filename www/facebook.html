@@ -63,7 +63,8 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
-				$('#iframecontent').height($("#facebook").outerHeight());
+				height = $(window).height() - $('.ui-header').height();
+				$('#iframecontent').height(height);
 			});
 			
 
