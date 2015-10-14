@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
 <body>
-<div data-role="page" id="home"> 
+<div data-role="page" id="siguenos"> 
   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
 	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
     <h1>CLUB MASCODIN</h1> 
@@ -31,7 +31,7 @@
 		<li class="private"><a class="ui-icon-gear ui-btn-icon-left"  href="configuracion.html" class="panel_li"  >Configuracion</a></li> 
 		<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
 		<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
-		<li><a class="ui-icon-comment ui-btn-icon-left" href="siguenos.html">Síguenos</a></li>
+		<li class="selected"><a class="ui-icon-comment ui-btn-icon-left" href="siguenos.html">Síguenos</a></li>
 		<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
 		<li class="private"><a class="ui-icon-power ui-btn-icon-left" href="logout.html">Salir</a></li>
 	</ul>
@@ -39,12 +39,10 @@
   </div> 
 
   <div data-role="content"> 
-  <div id="fader">
-    <img src="http://clubmascodin.com/app/index_bg.jpg"/>
-    <img src="http://clubmascodin.com/app/index_bg2.jpg"/>
-    <img src="http://clubmascodin.com/app/index_bg.jpg"/>
-    <img src="http://clubmascodin.com/app/index_bg2.jpg"/>
-</div>
+  <div class=" ui-body ui-body-a ui-corner-all">
+		<p><a href="facebook.html" data-role="button">Facebook</a></p>
+		<p><a href="blog.html" data-role="button">Blog</a></p>
+	  </div>
   </div> 
  
 
@@ -58,7 +56,7 @@
 			$(document).bind("mobileinit", function () {
 				$.mobile.ajaxEnabled = false;
 			});
-			$(document).on("pageshow", '#home', function(){
+			$(document).on("pageshow", '#siguenos', function(){
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
@@ -68,39 +66,7 @@
 				}
 			});
 			
-		
-$(function() {
-    $('#fader img:not(:first)').hide();
-    $('#fader img').css('position', 'absolute');
-    $('#fader img').css('top', '0px');
-    $('#fader img').css('left', '0px');
-    $('#fader img').css('width', '100%');
-    $('#fader img').css('height', 'auto');
-    $('#fader img').each(function() {
-        var img = $(this);
-        $('<img>').attr('src', $(this).attr('src')).load(function() {
-            //img.css('margin-left', -this.width / 2 + 'px');
-        });
-    });
-
-    var pause = false;
-    
-    function fadeNext() {
-        $('#fader img').first().fadeOut().appendTo($('#fader'));
-        $('#fader img').first().fadeIn();
-    }
-
-
-    function doRotate() {
-        if(!pause) {
-            fadeNext();
-        }    
-    }
-    
-    var rotate = setInterval(doRotate, 4000);
-});
-			
-			
+	
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>

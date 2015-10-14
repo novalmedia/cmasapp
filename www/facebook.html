@@ -10,11 +10,8 @@
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
-    <script id="facebook-jssdk" type="text/javascript" src="//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.4"></script>
 </head>
 <body>
-   <div id="fb-root"></div>
-
 <div data-role="page" id="facebook"> 
   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
 	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
@@ -34,16 +31,17 @@
 		<li class="private"><a class="ui-icon-gear ui-btn-icon-left"  href="configuracion.html" class="panel_li"  >Configuracion</a></li> 
 		<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
 		<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
-		<li><a class="ui-icon-phone ui-btn-icon-left" href="facebook.html">Facebook</a></li>
+		<li class="selected"><a class="ui-icon-comment ui-btn-icon-left" href="siguenos.html">Síguenos</a></li>
 		<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
 		<li class="private"><a class="ui-icon-power ui-btn-icon-left" href="logout.html">Salir</a></li>
 	</ul>
    
   </div> 
 
-  <div data-role="content">
-    <div class="fb-page" data-href="https://www.facebook.com/clubmascodin" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/clubmascodin"><a href="https://www.facebook.com/clubmascodin">Facebook</a></blockquote></div></div>
-  </div>
+  <div data-role="content"> 
+  <iframe style="border:none;margin:0;" id="iframecontent" width="100%" height="100%" src="http://clubmascodin.com/app/facebook.html"></iframe>
+  </div> 
+ 
 
 </div>
     <script type="text/javascript" src="cordova.js"></script>
@@ -53,9 +51,10 @@
 	<script type="text/javascript">
             app.initialize();
 			$(document).bind("mobileinit", function () {
-				//$.mobile.ajaxEnabled = false;
+				$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#facebook', function(){
+
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
@@ -63,9 +62,13 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
+				$('#iframecontent').height($("#facebook").outerHeight());
 			});
+			
+
+
+
     </script>
- 
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>
 </html>
