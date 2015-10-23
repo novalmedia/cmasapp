@@ -40,7 +40,7 @@
    
   </div> 
   <div data-role="content"> 
-	
+	<iframe style="border:none;margin:0;" id="iframecontent" width="100%" height="100%" src=""></iframe>
   </div> 
 
 </div>
@@ -62,15 +62,16 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 					var uid = window.localStorage["userid"];
+					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/getpets.php?uid='+uid);
 				//	var uid = 149;
-					$.post("http://www.clubmascodin.com/app/getpets.php", {uid:uid}, function(res) {
+					/* $.post("http://www.clubmascodin.com/app/getpets.php", {uid:uid}, function(res) {
 						if (res!=false){
 							$("div:jqmData(role='content')").html(res);
 							contentHeight = $(window).height() - $("div:jqmData(role='header')").height();
 							$('.petprofile').css('height',contentHeight);
 							$('.petprofile img').css('height',((contentHeight/100)*80)+'px');
 						}
-					},"html");
+					},"html"); */
 				}
 				if(window.localStorage['bgpictureData'] != ''){
 					$('body').css('background-image','url(data:image/jpeg;base64,' + window.localStorage['bgpictureData'] + ')').css('background-size','cover').css('background-position','center center');
