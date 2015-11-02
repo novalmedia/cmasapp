@@ -7,15 +7,13 @@
 
 <title>Club Mascodin</title>
     
-
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
-
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
 <body>
-<div data-role="page" id="mensajes"> 
-   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
+<div data-role="page" id="home"> 
+  <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
 	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
     <h1>CLUB MASCODIN</h1> 
     <a href="#panel" id="abre_panel" class="panel-btn"></a> 
@@ -26,61 +24,42 @@
 		<h3 class="private">Hola <span id="pname"></span></h3>
 		<h4 class="private">Socio: <span id="psocio"></span></h4>
 	</div>
-     <ul data-role="listview"> 
+    <ul data-role="listview"> 
 		<li class="private"><a class="ui-icon-user ui-btn-icon-left"  href="datos.html" class="panel_li"  >Mis datos</a></li> 
 		<li class="private"><a class="ui-icon-heart ui-btn-icon-left"  href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
-		<li class="private"><a class="ui-icon-calendar ui-btn-icon-left"  href="citas.html" class="panel_li"  >Pedir cita</a></li> 
-		<li class="private selected"><a class="ui-icon-mail ui-btn-icon-left"  href="mensajes.html" class="panel_li"  >Mensajes</a></li>
-		<li class="private"><a class="ui-icon-gear ui-btn-icon-left"  href="configuracion.html" class="panel_li"  >Configuracion</a></li> 		
+		<li class="private"><a class="ui-icon-mail ui-btn-icon-left"  href="mensajes.html" class="panel_li"  >Mensajes</a></li> 
 		<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
 		<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
-		<li><a class="ui-icon-comment ui-btn-icon-left" href="siguenos.html">Síguenos</a></li>
+		<li><a class="ui-icon-navigation ui-btn-icon-left" href="localizacion.html">Localizacion</a></li>
 		<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li>
-		<li class="private"><a class="ui-icon-power ui-btn-icon-left" href="logout.html">Salir</a></li>
+		<li><a class="ui-icon-power ui-btn-icon-left" href="logout.html" class="private">Salir</a></li>
 	</ul>
    
   </div> 
 
-  <div data-role="content" id="content"> 
-		<iframe style="border:none;margin:0;" id="iframecontent" width="100%" height="100%" src=""></iframe>
+  <div data-role="content"> 
+  <iframe width="100%" height="100%" src="http://google.com"></iframe>
   </div> 
+ 
 
 </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="PushNotification.js"></script>
-
 	<script type="text/javascript">
-			app.initialize();
+            app.initialize();
 			$(document).bind("mobileinit", function () {
 				$.mobile.ajaxEnabled = false;
 			});
-			$(document).on("pageshow", '#mensajes', function(){
-
+			$(document).on("pageshow", '#home', function(){
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
 					$("#pname").html(window.localStorage["name"]);
-					$("#name").val(window.localStorage["name"]);
-					$("#email").val(window.localStorage["email"]);
-					$('#content').html(window.localStorage["messages"]);
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
-					var uid = window.localStorage["userid"];
-					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/mascochat.php?uid='+uid);
 				}
-				if(window.localStorage['bgpictureData'] != ''){
-					$('body').css('background-image','url(data:image/jpeg;base64,' + window.localStorage['bgpictureData'] + ')').css('background-size','cover').css('background-position','center center');
-					$('.ui-content').css('background', 'transparent');
-					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
-				} else if(window.localStorage['bgpictureFile'] != ''){
-					$('body').css('background-image','url(' + window.localStorage['bgpictureFile'] + ')').css('background-size','cover').css('background-position','center center');
-					$('.ui-content').css('background', 'transparent');
-					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
-				}
-				height = $(window).height() - $('.ui-header').height();
-				$('#iframecontent').height(height);
 			});
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
