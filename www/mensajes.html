@@ -69,6 +69,7 @@
 					$(".loginlink").hide();
 					var uid = window.localStorage["userid"];
 					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/mascochat.php?uid='+uid);
+					alert('ok');
 				}
 				if(window.localStorage['bgpictureData'] != ''){
 					$('body').css('background-image','url(data:image/jpeg;base64,' + window.localStorage['bgpictureData'] + ')').css('background-size','cover').css('background-position','center center');
