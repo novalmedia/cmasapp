@@ -55,6 +55,7 @@
 			app.initialize();
 			$(document).bind("mobileinit", function () {
 				$.mobile.ajaxEnabled = false;
+				$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
 			});
 			$(document).on("pageshow", '#mensajes', function(){
 
@@ -68,7 +69,6 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 					var uid = window.localStorage["userid"];
-					$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
 					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/mascochat.php?uid='+uid);
 	
 				}
