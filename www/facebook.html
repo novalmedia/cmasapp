@@ -55,7 +55,7 @@
 				$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#facebook', function(){
-
+				$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
@@ -67,7 +67,9 @@
 				$('#iframecontent').height(height);
 			});
 			
-
+		$('#iframecontent').load(function(){
+			$.mobile.loading( "hide");
+		})
 
 
     </script>
