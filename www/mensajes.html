@@ -86,7 +86,11 @@
 			});
 			
 			$('#iframecontent').load(function(){
-				$.mobile.loading( "hide");
+				setTimeout((function() {
+					$.mobile.loading( "hide");
+				}), 2000);
+			
+				
 			})
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
