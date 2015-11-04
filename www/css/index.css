@@ -1,5 +1,11 @@
 body {background-color: #ffffff !important; background-repeat: no-repeat;background-attachment: fixed;}
 
+.ui-overlay-a, 
+.ui-page-theme-a, 
+.ui-page-theme-a .ui-panel-wrapper {
+	background-color: #ffffff !important; 
+}
+
 nav ul {box-sizing: border-box;padding:0;width: 100%;float: left;}
 nav ul li {display: inline-block;
 text-align: center;
