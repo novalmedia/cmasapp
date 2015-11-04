@@ -98,3 +98,8 @@ margin-top: 5px !important;
 #facebook .ui-content {padding: 0 !important;}
 #blog .ui-content {padding: 0 !important;}
 #citas .ui-content {padding: 0 5% !important;}
+
+.ui-loader {
+	z-index:999;
+
+}
