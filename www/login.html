@@ -60,7 +60,7 @@
 
 <input type="submit" value="Entrar" id="submitButton" tabindex="3" />
 </form>
-<p style="text-align:center;"><a href="">Recuperar contraseña</a></p>
+<p style="text-align:center;"><a href="#" onclick="recoverPass();">Recuperar contraseña</a></p>
 
 </div>
 
@@ -71,6 +71,41 @@
 $(window).load(function(e) {
 	checkPreAuth();
 });
+
+function recoverPass(){
+	var socio = $('#username').val();
+	navigator.notification.prompt(
+        'Confirma tu número de socio',  // message
+        onRecoverPass,                  // callback to invoke
+        'Recuperar contraseña',            // title
+        ['Enviar','Cancelar'],             // buttonLabels
+        socio                 // defaultText
+    );
+	return false;
+}
+
+function onRecoverPass(results){
+	if (results.buttonIndex == 2) return false;
+	
+	var uid =results.input1;
+	$.post("http://www.clubmascodin.com/app/recoverpass.php", {userid:uid}, function(res) {
+			if (res==true){
+				navigator.notification.alert(
+					'Se ha enviado un correo a tu cuenta de email asociada. Si no lo recibes ponte en contacto con nosotros en el 955 08 93 93.',  // message
+					function (){},         // callback
+					'Recuperar contraseña',            // title
+					'Ok'                  // buttonName
+				);
+			} else {
+				navigator.notification.alert(
+					'Se ha producido un error. Ponte en contacto con nosotros en el 955 08 93 93.',  // message
+					function (){},         // callback
+					'Recuperar contraseña',            // title
+					'Ok'                  // buttonName
+				);
+			}
+		},"json");
+}
 </script>
 </body>
 </html>
