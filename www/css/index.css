@@ -92,3 +92,6 @@ margin-top: 5px !important;
 #facebook .ui-content {padding: 0 !important;}
 #blog .ui-content {padding: 0 !important;}
 #citas .ui-content {padding: 0 !important;}
+
+#datos label {font-weight:bold;}
+#datos .ui-field-contain > span {border: 1px solid #000000;display: inline-block; width: 100%;}
