@@ -85,15 +85,13 @@ function recoverPass(){
 }
 
 function onRecoverPass(results){
-	alert(results.buttonIndex);
-	alert(results.input1);
 	if (results.buttonIndex == 2) return false;
 	
 	var uid =results.input1;
 	$.post("http://www.clubmascodin.com/app/recoverpass.php", {userid:uid}, function(res) {
 			if (res==true){
 				navigator.notification.alert(
-					'Se ha enviado un correo a tu cuenta de email asociada. Si no lo recibes ponte en contacto con nosotros en el 955 08 93 93.',  // message
+					'Se ha enviado un SMS a tu teléfono asociado. Si no lo recibes ponte en contacto con nosotros en el 955 08 93 93.',  // message
 					function (){},         // callback
 					'Recuperar contraseña',            // title
 					'Ok'                  // buttonName
