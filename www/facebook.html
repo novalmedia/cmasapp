@@ -40,7 +40,7 @@
   </div> 
 
   <div data-role="content"> 
-  <iframe style="border:none;margin:0;" id="iframecontent" width="100%" height="100%" src="http://clubmascodin.com/app/facebook.html"></iframe>
+  <iframe style="border:none;margin:0;display: none;" id="iframecontent" width="100%" height="100%" src=""></iframe>
   </div> 
  
 
@@ -55,7 +55,7 @@
 				$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#facebook', function(){
-
+				$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
@@ -63,11 +63,18 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
+				$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
+				$('#iframecontent').attr('src','http://clubmascodin.com/app/facebook.html');
 				height = $(window).height() - $('.ui-header').height();
 				$('#iframecontent').height(height);
 			});
 			
-
+		$('#iframecontent').load(function(){
+				setTimeout((function() {
+					$.mobile.loading( "hide");
+					$('#iframecontent').show();
+				}), 1000);
+			})
 
 
     </script>
