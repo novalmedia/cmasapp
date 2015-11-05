@@ -95,3 +95,5 @@ margin-top: 5px !important;
 
 #datos label {font-weight:bold;}
 #datos .ui-field-contain > span {border: 1px solid #000000;display: inline-block; width: 100%;}
+
+.ui-loader{z-index:999 !important;}
