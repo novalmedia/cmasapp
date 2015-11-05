@@ -159,11 +159,11 @@
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
-				if(window.localStorage['bgpictureData'] != ''){
+				if(window.localStorage['bgpictureData'] != '' && window.localStorage['bgpictureData'] != 'undefined'){
 					$('body').css('background-image','url(data:image/jpeg;base64,' + window.localStorage['bgpictureData'] + ')').css('background-size','cover').css('background-position','center center');
 					$('.ui-content').css('background', 'transparent');
 					$('.ui-page').css('background', '#ffffff');
-				} else if(window.localStorage['bgpictureFile'] != ''){
+				} else if(window.localStorage['bgpictureFile'] != '' && window.localStorage['bgpictureFile'] != 'undefined'){
 					$('body').css('background-image','url(' + window.localStorage['bgpictureFile'] + ')').css('background-size','cover').css('background-position','center center');
 					$('.ui-content').css('background', 'transparent');
 					$('.ui-page').css('background', '#ffffff');
