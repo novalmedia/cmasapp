@@ -85,6 +85,8 @@ function recoverPass(){
 }
 
 function onRecoverPass(results){
+	alert(results.buttonIndex);
+	alert(results.input1);
 	if (results.buttonIndex == 2) return false;
 	
 	var uid =results.input1;
