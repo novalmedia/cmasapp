@@ -90,16 +90,16 @@ margin-top: 5px !important;
 .petprofile {width: 100%;text-align: center;}
 .petprofile img{float: none; clear:both;}
 
-#facebook .ui-content {padding: 0 5% !important;}
-#blog .ui-content {padding: 0 5% !important;}
-#citas .ui-content {padding: 0 5% !important;}
+#facebook .ui-content {padding: 0 0 !important;}
+#blog .ui-content {padding: 0 0 !important;}
+#citas .ui-content {padding: 0 0 !important;}
 
 #datos {}
 #datos .ui-content{}
 #datos label {font-weight:bold;font-size: 18px;}
 #datos .ui-field-contain {border: none;}
 #datos .ui-field-contain > span {
-	border: 1px solid #ffffff;width: 100%;padding: 5px;display: inline-block; margin-bottom: 10px;
+	border: 1px solid #000000;width: 100%;padding: 5px;display: inline-block; margin-bottom: 10px;
 }
 
 .ui-loader{z-index:999 !important;}
