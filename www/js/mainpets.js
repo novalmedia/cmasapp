@@ -123,8 +123,12 @@ var app = {
 		
 	},
 	onPhotoFileSuccess: function(imageData) { 
-		alert(selectedPet);
-		alert(imageData);
+		uid = window.localStorage["userid"];
+		$.post("http://www.clubmascodin.com/app/savepicpet.php", {userid:uid,image:imageData,pet:selectedPet}, function(res) {
+					if (res==true){
+						$('#iframecontent').reload();
+					}
+				},"json");
 		
 		/* $('body').css('background-image','url(' + imageData + ')').css('background-size','cover').css('background-position','center center');
 		$('.ui-page, .ui-content').css('background', 'transparent');
