@@ -6,7 +6,7 @@
 .ui-loader{display:none;z-index:9999999;position:absolute;top:-50%;left:50%;width:100%;height:100%;border:0}
 .ui-loader-default{background:0;filter:Alpha(Opacity=18);opacity:.18;width:100%;height:100%;}
 .ui-loader-verbose{width:12.5em;filter:Alpha(Opacity=88);opacity:.88;box-shadow:0 1px 1px -1px #fff;
-height:auto;margin-left:-6.875em;margin-top:-2.6875em;padding:.625em}
+height:auto;margin-left:0;margin-top:0;padding:.625em}
 .ui-loader-default h1{font-size:0;width:0;height:0;overflow:hidden}
 .ui-loader-verbose h1{font-size:1em;margin:0;text-align:center}
 .ui-loader .ui-icon-loading{background-color:#000;display:block;margin:0;width:100%;height:100%;
