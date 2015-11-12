@@ -100,7 +100,7 @@ var app = {
 		selectedPet = idPet;
 		// Retrieve image file location from specified source
 		navigator.camera.getPicture(app.onPhotoFileSuccess, app.onFail, { quality: 50,
-		destinationType: destinationType.FILE_URI,
+		destinationType: destinationType.DATA_URL,
 		sourceType: sourceType.PHOTOLIBRARY});
 	},
 	disableBG: function() {
