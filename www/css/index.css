@@ -94,8 +94,8 @@ margin-top: 5px !important;
 #blog .ui-content {padding: 0 5% !important;}
 #citas .ui-content {padding: 0 5% !important;}
 
-#datos {background-color: #000000 !important;}
-#datos .ui-content{color: #ffffff;}
+#datos {}
+#datos .ui-content{}
 #datos label {font-weight:bold;font-size: 18px;}
 #datos .ui-field-contain {border: none;}
 #datos .ui-field-contain > span {
