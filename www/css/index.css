@@ -104,3 +104,6 @@ margin-top: 5px !important;
 
 .ui-loader{z-index:999 !important;}
 .ui-loader .ui-bar{padding: 0 !important;}
+
+#home .ui-content {padding:0;}
+#fader {background: url(http://clubmascodin.com/app/index_bg.jpg) no-repeat center center; background-size: cover;min-height: 640px;}
