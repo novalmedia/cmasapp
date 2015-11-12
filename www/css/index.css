@@ -103,3 +103,4 @@ margin-top: 5px !important;
 }
 
 .ui-loader{z-index:999 !important;}
+.ui-loader .ui-bar{padding: 0 !important;}
