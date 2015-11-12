@@ -91,14 +91,13 @@ var app = {
               break;
         }
     },
-	capturePhoto: function(idPet) {
-		selectedPet = idPet;
-		
+	capturePhoto: function() {
 		navigator.camera.getPicture(app.onPhotoDataSuccess, app.onFail, { quality: 50,
 		destinationType: destinationType.DATA_URL });
 	},
 
-	getPhoto: function() {
+	getPhoto: function(idPet) {
+		selectedPet = idPet;
 		// Retrieve image file location from specified source
 		navigator.camera.getPicture(app.onPhotoFileSuccess, app.onFail, { quality: 50,
 		destinationType: destinationType.DATA_URL,
@@ -117,8 +116,6 @@ var app = {
 		console.log(fail);
 	},
 	onPhotoDataSuccess: function(imageData) {
-		alert(selectedPet);
-		alert(imageData);
 		/* $('body').css('background-image','url(data:image/jpeg;base64,' + imageData + ')').css('background-size','cover').css('background-position','center center');
 		$('.ui-page, .ui-content').css('background', 'transparent');
 		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.5)'); */
@@ -126,6 +123,9 @@ var app = {
 		
 	},
 	onPhotoFileSuccess: function(imageData) { 
+		alert(selectedPet);
+		alert(imageData);
+		
 		/* $('body').css('background-image','url(' + imageData + ')').css('background-size','cover').css('background-position','center center');
 		$('.ui-page, .ui-content').css('background', 'transparent');
 		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.5)'); */
