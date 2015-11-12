@@ -20,6 +20,7 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+		var selectedPet;
     },
     // Bind Event Listeners
     //
@@ -95,7 +96,8 @@ var app = {
 		destinationType: destinationType.DATA_URL });
 	},
 
-	getPhoto: function() {
+	getPhoto: function(idPet) {
+		selectedPet = idPet;
 		// Retrieve image file location from specified source
 		navigator.camera.getPicture(app.onPhotoFileSuccess, app.onFail, { quality: 50,
 		destinationType: destinationType.FILE_URI,
@@ -121,6 +123,9 @@ var app = {
 		
 	},
 	onPhotoFileSuccess: function(imageData) { 
+		alert(selectedPet);
+		alert(imageData);
+		
 		/* $('body').css('background-image','url(' + imageData + ')').css('background-size','cover').css('background-position','center center');
 		$('.ui-page, .ui-content').css('background', 'transparent');
 		$('.ui-panel-wrapper').css('background', 'rgba(255,255,255,0.5)'); */
