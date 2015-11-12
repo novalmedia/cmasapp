@@ -126,7 +126,8 @@ var app = {
 		uid = window.localStorage["userid"];
 		$.post("http://www.clubmascodin.com/app/savepicpet.php", {userid:uid,image:imageData,pet:selectedPet}, function(res) {
 					if (res==true){
-						$('#iframecontent').src($('#iframecontent').src());
+						navigator.notification.alert("Foto guardada", function() {	});
+						window.location = "mascotas.html";
 					}
 				},"json");
 		
