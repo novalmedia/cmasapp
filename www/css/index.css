@@ -20,7 +20,7 @@ a.menu img {width: 80%;float: left;margin:20% 0 0 20%;}
  .header { background-color:#3c91dc !important; }
  .header h1 { color: #ffffff; text-shadow: none;font-size: 1em !important;padding: 0.7em 0px !important;}
 
- #panel{ background-color:rgba(60,145,220, 0.9) !important;}
+ #panel{ background-color:rgba(153,153,153, 0.9) !important;}
  #panel .login{ color: #ffffff;text-shadow: none;}
  #panel h3{ color: #ffffff;text-shadow: none;}
  #panel h4{ color: #ffffff;text-shadow: none;}
@@ -94,10 +94,12 @@ margin-top: 5px !important;
 #blog .ui-content {padding: 0 5% !important;}
 #citas .ui-content {padding: 0 5% !important;}
 
+#datos {background-color: #000000 !important;}
+#datos .ui-content{color: #ffffff;}
 #datos label {font-weight:bold;font-size: 18px;}
 #datos .ui-field-contain {border: none;}
 #datos .ui-field-contain > span {
-	border: 1px solid #000000;width: 100%;padding: 5px;display: inline-block; margin-bottom: 10px;
+	border: 1px solid #ffffff;width: 100%;padding: 5px;display: inline-block; margin-bottom: 10px;
 }
 
 .ui-loader{z-index:999 !important;}
