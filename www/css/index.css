@@ -113,3 +113,5 @@ margin-top: 5px !important;
 #facebook .ui-content {padding:0;}
 #blog .ui-content {padding:0;}
 #siguenos .ui-content {padding:0;}
+
+#loginPage {background: url(../images/login_bg.jpg) no-repeat center top;}
