@@ -69,6 +69,41 @@
 				}
 			});
 			
+			
+			$(document).on("pageshow", '#datos', function(){
+				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
+					$("#psocio").html(window.localStorage["socio"]);
+					$("#pname").html(window.localStorage["name"]);
+					$("#iname").val(window.localStorage["name"]);
+					$("#name").html(window.localStorage["name"]);
+					$("#iemail").val(window.localStorage["email"]);
+					$("#email").html(window.localStorage["email"]);
+					$("#ibirthDate").val(window.localStorage["birthDate"]);
+					$("#birthDate").html(window.localStorage["birthDate"]);
+					$("#iaddress1").val(window.localStorage["address1"]);
+					$("#address1").html(window.localStorage["address1"]);
+					$("#icity").val(window.localStorage["city"]);
+					$("#city").html(window.localStorage["city"]);
+					$("#ipostal_code").val(window.localStorage["postal_code"]);
+					$("#postal_code").html(window.localStorage["postal_code"]);
+					$("#iphone").val(window.localStorage["phone"]);
+					$("#phone").html(window.localStorage["phone"]);
+					
+					$(".private").removeClass('private');
+					$(".loginlink").hide();
+				}
+				if(window.localStorage['bgpictureData'] != '' && window.localStorage['bgpictureData'] != 'undefined'){
+					$('body').css('background-image','url(data:image/jpeg;base64,' + window.localStorage['bgpictureData'] + ')').css('background-size','cover').css('background-position','center center');
+					$('.ui-content').css('background', 'transparent');
+					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
+				} else if(window.localStorage['bgpictureFile'] != '' && window.localStorage['bgpictureFile'] != 'undefined'){
+					$('body').css('background-image','url(' + window.localStorage['bgpictureFile'] + ')').css('background-size','cover').css('background-position','center center');
+					$('.ui-content').css('background', 'transparent');
+					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
+				}
+			});
+			
 /*		
 $(function() {
     $('#fader img:not(:first)').hide();
