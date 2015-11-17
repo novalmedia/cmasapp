@@ -57,7 +57,7 @@
 	<script type="text/javascript">
             app.initialize();
 			$(document).bind("mobileinit", function () {
-				//$.mobile.ajaxEnabled = false;
+				$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#home', function(){
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
