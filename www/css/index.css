@@ -116,3 +116,6 @@ margin-top: 5px !important;
 
 #loginPage {background: url(../images/login_bg.jpg) no-repeat center top;}
 #bienvenido {background: url(http://clubmascodin.com/app/bienvenido.jpg) no-repeat center top;}
+
+#linkfb {background:url(../images/btn_facebook.jpg) no-repeat center center;background-size:cover;display: inline-block;width: 100%;height: 300px;}
+#linkbl {background:url(../images/btn_blog.jpg) no-repeat center center;background-size:cover;display: inline-block;width: 100%;height: 300px;}
