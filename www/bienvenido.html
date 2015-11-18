@@ -40,7 +40,15 @@
   </div> 
 
   <div data-role="content"> 
-  
+	  <div class="content-primary">
+		<h2>Benvenido <span id="pname2"></span></h2>
+		<ul data-role="listview" data-count-theme="b" data-inset="true">
+		    <li><a href="#">Mensajes <span class="ui-li-count">12</span></a></li>
+		    <li><a href="#">Recordatorios <span class="ui-li-count">0</span></a></li>
+		    <li><a href="#">Citas <span class="ui-li-count">4</span></a></li>
+		    <li><a href="#">Carrito de compra <span class="ui-li-count">2</span></a></li>
+		</ul>
+	</div> 
   </div> 
  
 
@@ -59,19 +67,11 @@
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
 					$("#pname").html(window.localStorage["name"]);
+					$("#pname2").html(window.localStorage["name"]);
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
 				}
 			});
-			
-		
-$(function() {
-    $('#fader img').css('position', 'absolute');
-    $('#fader img').css('top', '0px');
-    $('#fader img').css('left', '0px');
-    $('#fader img').css('width', '100%');
-    $('#fader img').css('height', 'auto');
-});
 			
 			
     </script>
