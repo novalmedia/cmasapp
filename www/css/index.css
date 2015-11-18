@@ -81,6 +81,7 @@ margin-top: 5px !important;
  address {text-align: center;}
  
  .ui-btn-icon-right {float: right;}
+ .ui-content .ui-btn-icon-right {float: none;}
  
 .ui-icon-edit {background-color: rgba(66,144,219, 0.7) !important}
 .ui-icon-check {background-color: rgba(66,219,84, 0.7) !important}
