@@ -43,75 +43,75 @@
 
   <div data-role="content" style="margin-bottom: 100%;"> 
 	 <div id="userForm" >
-		<h3>Datos personales</h3>
+		<h3 style="text-align: center;">Datos personales</h3>
 		 <div data-role="fieldcontain">
-			<label for="name">Nombre:</label>
+<!-- 			<label for="name">Nombre:</label> -->
 			<span id="name"></span>
 			<a href="#" onclick="$(this).next().show();$(this).hide();$(this).prev().hide();$('#iname').focus(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
 			<div style="display: none;">
 				<input class="userdata" type="text" name="name" id="iname" value="" />
 				<a href="#" onclick="saveData(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
-				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+<!-- 				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a> -->
 			</div>
 		 </div>
 		 <div data-role="fieldcontain">
-			<label for="email">Email:</label>
+<!-- 			<label for="email">Email:</label> -->
 			<span id="email"></span>
 			<a href="#" onclick="$(this).next().show();$(this).hide();$(this).prev().hide();$('#iemail').focus(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
 			<div style="display: none;">
 			<input class="userdata" type="text" name="email" id="iemail" value=""/>
 			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
-				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+<!-- 				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a> -->
 			</div>
 		 </div>
 		  <div data-role="fieldcontain">
-			<label for="birthDate">Fecha de nacimiento:</label>
+<!-- 			<label for="birthDate">Fecha de nacimiento:</label> -->
 			<span id="birthDate"></span>
 			<a href="#" onclick="$(this).next().show();$(this).hide();$(this).prev().hide();$('#ibirthDate').focus(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
 			<div style="display: none;">
 			<input class="userdata" type="date" data-clear-btn="false" name="birthDate" id="ibirthDate" value="" />
 			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
-				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+<!-- 				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a> -->
 			</div>
 		 </div>
 		 <div data-role="fieldcontain">
-			<label for="address1">Direcci&oacute;n:</label>
+<!-- 			<label for="address1">Direcci&oacute;n:</label> -->
 			<span id="address1"></span>
 			<a href="#" onclick="$(this).next().show();$(this).hide();$(this).prev().hide(); $('#iaddress1').focus();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
 			<div style="display: none;">
 			<input class="userdata" type="text" name="address1" id="iaddress1" value=""/>
 			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
-				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+<!-- 				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a> -->
 			</div>
 		 </div>
 		 <div data-role="fieldcontain">
-			<label for="city">Localidad:</label>
+<!-- 			<label for="city">Localidad:</label> -->
 			<span id="city"></span>
 			<a href="#" onclick="$(this).next().show();$(this).hide();$(this).prev().hide();$('#icity').focus(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
 			<div style="display: none;">
 			<input class="userdata" type="text" name="city" id="icity" value="" />
 			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
-				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+<!-- 				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a> -->
 			</div>
 		 </div>
 		 <div data-role="fieldcontain">
-			<label for="postal_code">C&oacute;digo Postal:</label>
+<!-- 			<label for="postal_code">C&oacute;digo Postal:</label> -->
 			<span id="postal_code"></span>
 			<a href="#" onclick="$(this).next().show();$(this).hide();$(this).prev().hide();$('#ipostal_code').focus(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
 			<div style="display: none;">
 			<input class="userdata" type="text" name="postal_code" id="ipostal_code" value="" />
 			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
-				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+<!-- 				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a> -->
 			</div>
 		 </div>
 		 <div data-role="fieldcontain">
-			<label for="phone">Tel&eacute;fono:</label>
+<!-- 			<label for="phone">Tel&eacute;fono:</label> -->
 			<span id="phone"></span>
 			<a href="#" onclick="$(this).next().show();$(this).hide();$(this).prev().hide();$('#iphone').focus(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-edit ui-btn-icon-notext">&nbsp;</a>
 			<div style="display: none;">
 			<input class="userdata" type="text" name="phone" id="iphone" value="" />
 			<a href="#" onclick="saveData(); return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-check ui-btn-icon-notext">&nbsp;</a>
-				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a>
+<!-- 				<a href="#" onclick="$(this).parent().hide();$(this).parent().prev().show();$(this).parent().prev().prev().show();return false;" class="ui-btn ui-btn-icon-right ui-corner-all ui-icon-delete ui-btn-icon-notext">&nbsp;</a> -->
 			</div>
 		 </div>
 	 </div>

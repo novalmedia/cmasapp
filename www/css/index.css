@@ -99,9 +99,8 @@ margin-top: 5px !important;
 #datos .ui-content{}
 #datos label {font-weight:bold;font-size: 18px;}
 #datos .ui-field-contain {border: none;}
-#datos .ui-field-contain > span {
-	border: 1px solid #000000;width: 100%;padding: 5px;display: inline-block; margin-bottom: 10px;
-}
+#datos .ui-field-contain > span {	border: 1px solid #000000;width: 90%;padding: 5px;display: inline-block; margin-bottom: 10px;float: left;}
+#datos .ui-field-contain input {	border: 1px solid #000000;width: 90%;padding: 5px;display: inline-block; margin-bottom: 10px;float: left;}
 
 .ui-loader{z-index:999 !important;}
 .ui-loader .ui-bar{padding: 0 !important;}
