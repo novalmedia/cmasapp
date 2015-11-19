@@ -67,6 +67,10 @@ function handleLogin() {
 				window.localStorage["postal_code"] = res["postal_code"];
 				window.localStorage["phone"] = res["phone"];
 				
+				window.localStorage["mensajes"] = res["mensajes"];
+				window.localStorage["recordatorios"] = res["recordatorios"];
+				window.localStorage["citas"] = res["citas"];
+				
 				window.localStorage["messages"] = '';
 				//window.localStorage["userdata"] = res;
 				var pushNotification = window.plugins.pushNotification;
