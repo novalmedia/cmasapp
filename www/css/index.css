@@ -99,7 +99,10 @@ margin-top: 5px !important;
 #datos .ui-content{}
 #datos label {font-weight:bold;font-size: 18px;}
 #datos .ui-field-contain {border: none;}
-#datos .ui-field-contain > span {	border: 1px solid #000000;width: 80%;padding: 1%;display: inline-block; margin-bottom: 10px;float: left;margin-right: 1%;}
+#datos .ui-field-contain > span {	border: 1px solid #000000;width: 70%;padding: 1%;padding-left: 11%;display: inline-block; margin-bottom: 10px;float: left;margin-right: 1%;}
+#datos .ui-field-contain > span.ui-btn-icon-left::after{
+margin-top: 5px;
+}
 #datos .ui-field-contain input {	border: 1px solid #000000;width: 80%;padding: 1%;display: inline-block; margin-bottom: 10px;float: left;margin-right: 1%;}
 #datos .ui-field-contain a {	float: right;width: 15%;padding: 0;}
 #datos .ui-input-text {border: none;}
