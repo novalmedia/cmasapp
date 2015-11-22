@@ -116,8 +116,8 @@ margin-top: 5px;
 #home .login_link img{width: 80px; height: auto;}
 
 #bottombuttons {display: inline-block;width:100%;margin-top: 40px;padding-bottom: 10px;}
-#bottombuttons a {display: inline-block;width:26%;margin: 0 3%;background: #ddd;text-align: center; text-decoration: none; font-weight: normal;color: #333;padding: 10px 0;
-border-radius: 5px;box-shadow: 2px 2px 2px #bbb }
+#bottombuttons a {display: inline-block;width:22%;margin: 0 1%;background: #ddd;text-align: center; text-decoration: none; font-weight: normal;color: #333;padding: 10px 0;
+border-radius: 5px;box-shadow: 2px 2px 2px #bbb;font-size: 14px; }
 
 #mascotas .ui-content {padding:0;}
 #mensajes .ui-content {padding:0;}
