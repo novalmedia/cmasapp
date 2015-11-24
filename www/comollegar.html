@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
-<body>
+<body style="display: none;">
 <div data-role="page" id="comollegar"> 
    <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
 	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
@@ -61,6 +61,7 @@
 				$.mobile.ajaxEnabled = false;
 			});
 			$(document).on("pageshow", '#comollegar', function(){
+				$('body').fadeIn();
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
