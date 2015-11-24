@@ -92,9 +92,9 @@ margin-top: 5px !important;
 .petprofile {width: 100%;text-align: center;}
 .petprofile img{float: none; clear:both;}
 
-#facebook .ui-content {padding: 0 0 !important;}
-#blog .ui-content {padding: 0 0 !important;}
-#citas .ui-content {padding: 0 0 !important;}
+#facebook .ui-content {padding: 0 0 !important;padding-top: 45px;}
+#blog .ui-content {padding: 0 0 !important;padding-top: 45px;}
+#citas .ui-content {padding: 0 0 !important;padding-top: 45px;}
 
 #datos {}
 #datos .ui-content{}
@@ -110,7 +110,7 @@ margin-top: 5px;
 .ui-loader{z-index:999 !important;}
 .ui-loader .ui-bar{padding: 0 !important;}
 
-#home .ui-content {padding:0;}
+#home .ui-content {padding:0;padding-top: 45px;}
 #fader {/* background: url(http://clubmascodin.com/app/index_bg.jpg) no-repeat center top; background-size: 100%; */min-height: 300px;}
 
 #home .login_link {width: 100%; text-align: center;margin:20px 0;display: inline-block;text-decoration: none; color: #333;font-weight: normal;}
@@ -120,11 +120,11 @@ margin-top: 5px;
 #bottombuttons a {display: inline-block;width:22%;margin: 0 1%;background: #ddd;text-align: center; text-decoration: none; font-weight: normal;color: #333;padding: 10px 0;
 border-radius: 5px;box-shadow: 2px 2px 2px #bbb;font-size: 14px; }
 
-#mascotas .ui-content {padding:0;}
-#mensajes .ui-content {padding:0;}
-#facebook .ui-content {padding:0;}
-#blog .ui-content {padding:0;}
-#siguenos .ui-content {padding:0;}
+#mascotas .ui-content {padding:0;padding-top: 45px;}
+#mensajes .ui-content {padding:0;padding-top: 45px;}
+#facebook .ui-content {padding:0;padding-top: 45px;}
+#blog .ui-content {padding:0;padding-top: 45px;}
+#siguenos .ui-content {padding:0;padding-top: 45px;}
 
 #loginPage {background: url(../images/login_bg.jpg) no-repeat center top;}
 /* #bienvenido {background: url(http://clubmascodin.com/app/bienvenido.jpg) no-repeat center top;} */
