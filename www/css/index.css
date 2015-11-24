@@ -1,4 +1,5 @@
 body {background-color: #ffffff !important; background-repeat: no-repeat;background-attachment: fixed;}
+.ui-content {padding-top: 45px;}
 .ui-page{background:transparent;}
 .ui-panel-wrapper{background:transparent;}
 nav ul {box-sizing: border-box;padding:0;width: 100%;float: left;}
