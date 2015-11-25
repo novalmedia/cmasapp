@@ -65,10 +65,6 @@
 			$(document).bind("mobileinit", function () {
 				$.mobile.ajaxEnabled = false;
 			});
-			$(function(){
-				$("#popupCita").enhanceWithin().popup();
-			});
-
 			$(document).on("pageshow", '#bienvenido', function(){
 				$('body').fadeIn();
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
@@ -84,14 +80,11 @@
 					
 					if (window.localStorage["citatext"] !== ''){
 						$('#citas_link').click(function(){
-							$('#popupCita').html('<p>'+window.localStorage["citatext"]+'</p>').enhanceWithin().popup("refresh");
+							navigator.notification.alert(window.localStorage["citatext"], function() {});
 							return false;
 						});
 					}
 				}
-			});
-			$(document).on("pagecreate", '#bienvenido', function(){
-				$('#popupCita').enhanceWithin().popup("refresh");
 			});
 			
 			
