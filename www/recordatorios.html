@@ -27,11 +27,10 @@
 		<h4 class="private">Socio: <span id="psocio"></span></h4>
 	</div>
      <ul data-role="listview"> 
-		<li class="private"><a class="ui-icon-user ui-btn-icon-left"  href="datos.html" class="panel_li"  >Mis datos</a></li> 
 		<li class="private"><a class="ui-icon-heart ui-btn-icon-left"  href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
 		<li class="private"><a class="ui-icon-calendar ui-btn-icon-left"  href="citas.html" class="panel_li"  >Pedir cita</a></li> 
 		<li class="private selected"><a class="ui-icon-mail ui-btn-icon-left"  href="mensajes.html" class="panel_li"  >Mensajes</a></li>
-		<li class="private"><a class="ui-icon-gear ui-btn-icon-left"  href="configuracion.html" class="panel_li"  >Configuracion</a></li> 		
+		<li class="private"><a class="ui-icon-user ui-btn-icon-left"  href="datos.html" class="panel_li"  >Mis datos</a></li> 
 		<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
 		<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
 		<li><a class="ui-icon-comment ui-btn-icon-left" href="siguenos.html">Síguenos</a></li>
@@ -72,15 +71,7 @@
 					//$('#iframecontent').attr('src','http://www.clubmascodin.com/app/mascochat.php?uid='+uid);
 	
 				}
-				if(window.localStorage['bgpictureData'] != '' && window.localStorage['bgpictureData'] != 'undefined'){
-					$('body').css('background-image','url(data:image/jpeg;base64,' + window.localStorage['bgpictureData'] + ')').css('background-size','cover').css('background-position','center center');
-					$('.ui-content').css('background', 'transparent');
-					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
-				} else if(window.localStorage['bgpictureFile'] != '' && window.localStorage['bgpictureFile'] != 'undefined'){
-					$('body').css('background-image','url(' + window.localStorage['bgpictureFile'] + ')').css('background-size','cover').css('background-position','center center');
-					$('.ui-content').css('background', 'transparent');
-					$('.ui-page').css('background', 'rgba(255,255,255,0.5)');
-				}
+			
 				//height = $(window).height() - $('.ui-header').height();
 				//$('#iframecontent').height(height);
 			});
