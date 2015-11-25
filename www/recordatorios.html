@@ -66,22 +66,22 @@
 					$('#content').html(window.localStorage["messages"]);
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
-					//$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
-					//var uid = window.localStorage["userid"];
-					//$('#iframecontent').attr('src','http://www.clubmascodin.com/app/mascochat.php?uid='+uid);
+					$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
+					var uid = window.localStorage["userid"];
+					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/recordatorios.php?uid='+uid);
 	
 				}
 			
-				//height = $(window).height() - $('.ui-header').height();
-				//$('#iframecontent').height(height);
+				height = $(window).height() - $('.ui-header').height();
+				$('#iframecontent').height(height);
 			});
 			
-			/*$('#iframecontent').load(function(){
+			$('#iframecontent').load(function(){
 				setTimeout((function() {
 					$.mobile.loading( "hide");
 					$('#iframecontent').show();
 				}), 1000);
-			}) */
+			}) 
     </script>
     <script type="text/javascript" src="js/jquery.mobile.js"></script>
 </body>

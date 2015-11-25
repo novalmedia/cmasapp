@@ -44,7 +44,7 @@
 		<ul data-role="listview" data-count-theme="b" data-inset="true">
 		    <li><a href="mensajes.html">Mensajes <span class="ui-li-count smensajes">0</span></a></li>
 		    <li><a href="recordatorios.html">Recordatorios <span class="ui-li-count srecordatorios">0</span></a></li>
-		    <li><a href="citas.html">Citas <span class="ui-li-count scitas">0</span></a></li>
+		    <li><a href="#" id="citas_link">Citas <span class="ui-li-count scitas">0</span></a></li>
 		    <li><a href="carrito.html">Carrito de compra <span class="ui-li-count scarrito">0</span></a></li>
 		</ul>
 	</div> 
@@ -73,6 +73,13 @@
 					$('.scitas').html(window.localStorage["citas"]);
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
+					
+					if (window.localStorage["citatext"] !== ''){
+						$('#citas_link').click(function(){
+							navigator.notification.alert(window.localStorage["citatext"], function() {});
+							return false;
+						});
+					}
 				}
 			});
 			

@@ -70,6 +70,7 @@ function handleLogin() {
 				window.localStorage["mensajes"] = res["mensajes"];
 				window.localStorage["recordatorios"] = res["recordatorios"];
 				window.localStorage["citas"] = res["citas"];
+				window.localStorage["citatext"] = res["citatext"];
 				
 				window.localStorage["messages"] = '';
 				//window.localStorage["userdata"] = res;
