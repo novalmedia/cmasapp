@@ -65,6 +65,10 @@
 			$(document).bind("mobileinit", function () {
 				$.mobile.ajaxEnabled = false;
 			});
+			$(function(){
+				$("#popupCita").enhanceWithin().popup();
+			});
+
 			$(document).on("pageshow", '#bienvenido', function(){
 				$('body').fadeIn();
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
