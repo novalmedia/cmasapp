@@ -80,7 +80,7 @@
 					
 					if (window.localStorage["citatext"] !== ''){
 						$('#citas_link').click(function(){
-							$('#popupCita p').html(window.localStorage["citatext"], function() {});
+							$('#popupCita').html('<p>'+window.localStorage["citatext"]+'</p>').enhanceWithin().popup("refresh");
 							return false;
 						});
 					}
