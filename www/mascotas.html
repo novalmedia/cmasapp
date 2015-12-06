@@ -65,7 +65,9 @@
 					$(".loginlink").hide();
 					$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
 					var uid = window.localStorage["userid"];
-					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/getpets.php?uid='+uid);
+					var u = window.localStorage["username"];
+					var p = window.localStorage["password"];
+					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/getpets.php?uid='+uid+'&u='+u+'&p='+p);
 				//	var uid = 149;
 					/* $.post("http://www.clubmascodin.com/app/getpets.php", {uid:uid}, function(res) {
 						if (res!=false){

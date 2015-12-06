@@ -171,7 +171,9 @@
 				})
 			
 				var uid = window.localStorage["userid"];
-				$.post("http://www.clubmascodin.com/app/saveuserdata.php", {userid:uid, data: data}, function(res) {
+				var u = window.localStorage["username"];
+				var p = window.localStorage["password"];
+				$.post("http://www.clubmascodin.com/app/saveuserdata.php", {userid:uid, data: data, u:u, p:p}, function(res) {
 					if (res==true){
 						navigator.notification.alert("Datos guardados", function() {});
 						$("div:jqmData(role='fieldcontain') > div").hide();
