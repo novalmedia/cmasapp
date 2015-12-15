@@ -20,6 +20,10 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+		var networkState = navigator.network.connection.type;  
+		if (networkState == Connection.UNKNOWN || networkState == Connection.NONE){
+			navigator.notification.alert("Necesitas estar conectado a Internet para usar todas las funcionalidades de esta APP.", function() {	});
+		} 
     },
     // Bind Event Listeners
     //
