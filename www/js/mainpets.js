@@ -21,10 +21,6 @@ var app = {
     initialize: function() {
         this.bindEvents();
 		var selectedPet;
-		var networkState = navigator.network.connection.type;  
-		if (networkState == Connection.UNKNOWN || networkState == Connection.NONE){
-			navigator.notification.alert("Necesitas estar conectado a Internet para usar todas las funcionalidades de esta APP.", function() {	});
-		} 
     },
     // Bind Event Listeners
     //
@@ -42,6 +38,10 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+		var networkState = navigator.network.connection.type;  
+		if (networkState == Connection.UNKNOWN || networkState == Connection.NONE){
+			navigator.notification.alert("Necesitas estar conectado a Internet para usar todas las funcionalidades de esta APP.", function() {	});
+		} 
 		destinationType = navigator.camera.DestinationType;
 		sourceType = navigator.camera.PictureSourceType;
         app.receivedEvent('deviceready');
