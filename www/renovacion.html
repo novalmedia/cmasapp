@@ -67,7 +67,7 @@
 					$(".loginlink").hide();
 				}
 				$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
-				$('#iframecontent').attr('src','http://clubmascodin.com/app/request.php');
+				$('#iframecontent').attr('src','http://clubmascodin.com/app/request.php?uid='+window.localStorage["socio"]);
 				height = $(window).height() - $('.ui-header').height();
 				$('#iframecontent').height(height);
 			});
