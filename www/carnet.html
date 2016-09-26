@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons.css" />
 </head>
 <body style="display: none;">
-<div data-role="page" id="facebook"> 
+<div data-role="page" id="carnet"> 
   <div data-role="header" class="header" data-position="fixed"  data-theme="b"> 
 	<a href="index.html" class="ui-btn-right" id="clublogo"></a>
     <h1>CLUB MASCODIN</h1> 
@@ -26,14 +26,15 @@
 	</div>
     <ul data-role="listview"> 
 			<li class="private"><a class="ui-icon-bars ui-btn-icon-left"  href="bienvenido.html" class="panel_li"  >Portada</a></li> 
-		<li class="private"><a class="ui-icon-heart ui-btn-icon-left"  href="mascotas.html" class="panel_li"  >Mis mascotas</a></li>
-<li class="private"><a class="ui-icon-calendar ui-btn-icon-left"  href="citas.html" class="panel_li"  >Pedir cita</a></li> <li class="private"><a class="ui-icon-calendar ui-btn-icon-left"  href="vercitas.html" class="panel_li"  >Ver citas</a></li> 		
+		<li class="private selected"><a class="ui-icon-user ui-btn-icon-left"  href="carnet.html" class="panel_li"  >Mi carnet</a></li> <li class="private"><a class="ui-icon-heart ui-btn-icon-left"  href="mascotas.html" class="panel_li"  >Mis mascotas</a></li> 
+		<li class="private"><a class="ui-icon-calendar ui-btn-icon-left"  href="citas.html" class="panel_li"  >Pedir cita</a></li> 
+		<li class="private"><a class="ui-icon-calendar ui-btn-icon-left"  href="vercitas.html" class="panel_li"  >Ver citas</a></li> 
 		<li class="private"><a class="ui-icon-mail ui-btn-icon-left"  href="mensajes.html" class="panel_li"  >Mensajes</a></li>
 		<li class="private"><a class="ui-icon-star ui-btn-icon-left"  href="recordatorios.html" class="panel_li"  >Recordatorios</a></li>
 		<li class="private"><a class="ui-icon-user ui-btn-icon-left"  href="datos.html" class="panel_li"  >Mis datos</a></li> <li class="private"><a class="ui-icon-user ui-btn-icon-left"  href="renovacion.html" class="panel_li"  >Renovar Cuota</a></li> 
 		<li><a class="ui-icon-power ui-btn-icon-left loginlink" href="login.html">Acceso socios</a></li>
 		<li><a class="ui-icon-phone ui-btn-icon-left" href="contacto.html">Contacto</a></li>
-		<li class="selected"><a class="ui-icon-comment ui-btn-icon-left" href="siguenos.html">Síguenos</a></li>
+		<li><a class="ui-icon-comment ui-btn-icon-left" href="siguenos.html">Síguenos</a></li>
 		<li><a class="ui-icon-plus ui-btn-icon-left" href="tel:955089393">Urgencias</a></li><li><a class="ui-icon-plus ui-btn-icon-left" href="cals.html">Calendarios</a></li>
 		<li class="private"><a class="ui-icon-power ui-btn-icon-left" href="logout.html">Salir</a></li>
 	</ul>
@@ -41,7 +42,7 @@
   </div> 
 
   <div data-role="content"> 
-  <iframe style="border:none;margin:0;display: none;" id="iframecontent" width="100%" height="100%" src=""></iframe>
+	<iframe style="border:none;margin:0;display: none;" id="iframecontent" width="100%" height="100%" src=""></iframe>
   </div> 
  
 
@@ -55,23 +56,22 @@
 			$(document).bind("mobileinit", function () {
 				$.mobile.ajaxEnabled = false;
 			});
-			$(document).on("pageshow", '#facebook', function(){
+			$(document).on("pageshow", '#carnet', function(){
 				$('body').fadeIn();
-				$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
 				$("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
 				if(window.localStorage["socio"] != undefined && window.localStorage["name"] != undefined) {
 					$("#psocio").html(window.localStorage["socio"]);
 					$("#pname").html(window.localStorage["name"]);
 					$(".private").removeClass('private');
 					$(".loginlink").hide();
+					$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
+					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/carnet/'+window.localStorage["username"]+'.jpg');
 				}
-				$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
-				$('#iframecontent').attr('src','http://clubmascodin.com/app/facebook.html');
 				height = $(window).height() - $('.ui-header').height();
 				$('#iframecontent').height(height);
 			});
 			
-		$('#iframecontent').load(function(){
+			$('#iframecontent').load(function(){
 				setTimeout((function() {
 					$.mobile.loading( "hide");
 					$('#iframecontent').show();
