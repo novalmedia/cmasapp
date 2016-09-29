@@ -52,8 +52,11 @@
         Otherwise, you can specify specific domains:
     -->
     <access origin="*://*.clubmascodin.com/*" />
+    <access origin="*://*.santanderelavontpvvirtual.es/*" />
 	<allow-navigation href="*://*.clubmascodin.com/*" />
+	<allow-navigation href="*://*.santanderelavontpvvirtual.es/*" />
 	<allow-intent href="*://*.clubmascodin.com/*" />
+	<allow-intent href="*://*.santanderelavontpvvirtual.es/*" />
     
     <!--
         <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
