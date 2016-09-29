@@ -70,8 +70,6 @@
 					$.mobile.loading( "show", {text: "",textVisible: true,theme: "d",html: "<span class='ui-bar ui-overlay-c ui-corner-all'><img src='images/loading.gif' /></span>"});
 					$('#iframecontent').attr('src','http://www.clubmascodin.com/app/carnet/'+window.localStorage["username"]+'.jpg');
 				}
-				height = $(window).height() - $('.ui-header').height();
-				$('#iframecontent').height(height);
 			});
 			
 			$('#iframecontent').load(function(){
