@@ -3,7 +3,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "clubmascodin.id"
-        version   = "1.0.2" versionCode="102">
+        version   = "1.1.0" versionCode="110">
 
     <name>ClubMascodin</name>
 
