@@ -51,7 +51,7 @@
 
         Otherwise, you can specify specific domains:
     -->
-    <access origin="*" launch-external="yes" />
+    <access origin="*://*.clubmascodin.com/*" />
 	<allow-navigation href="*://*.clubmascodin.com/*" />
 	<allow-intent href="*://*.clubmascodin.com/*" />
     
