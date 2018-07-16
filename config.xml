@@ -24,7 +24,7 @@
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
-    <preference name="android-minSdkVersion"      value="14" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-minSdkVersion"      value="15" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
@@ -86,6 +86,10 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+	<preference name="android-build-tool" value="gradle" />
+	<plugin name="phonegap-plugin-push" source="npm">
+		<param name="SENDER_ID" value="349344466742" />
+	</plugin>
 
     <gap:platform name="android"/>
     <preference name="splash-screen-duration" value="3000"/></widget>

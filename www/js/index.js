@@ -74,9 +74,51 @@ function handleLogin() {
 				
 				window.localStorage["messages"] = '';
 				//window.localStorage["userdata"] = res;
-				var pushNotification = window.plugins.pushNotification;
-				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"});
-				//window.location = "index.html";
+				/* var pushNotification = window.plugins.pushNotification;
+				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"}); */
+				
+				
+				const push = PushNotification.init({
+					android: {
+					},
+					browser: {
+						pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+					}
+				});
+
+				push.on('registration', (data) => {
+					// data.registrationId
+					if ( data.registrationId.length > 0 )
+						{
+							var uid = window.localStorage["userid"];
+							if (uid != null){
+								$.post("http://www.clubmascodin.com/app/savegcm.php", {userid:uid,gcmkey:data.registrationId}, function(res) {
+									if (res==0){
+										/*navigator.notification.alert("Identificación correcta", function() {});*/
+										window.location = "bienvenido.html";
+									} else {
+										window.location = "chgpwd.html";
+									}
+								},"json");
+							}
+						}
+				});
+
+				push.on('notification', (data) => {
+					// data.message,
+					// data.title,
+					// data.count,
+					// data.sound,
+					// data.image,
+					// data.additionalData
+				});
+
+				push.on('error', (e) => {
+					// e.message
+				});
+				
+				
+				//window.location = "bienvenido.html";
 			}
 			$("#submitButton").removeAttr("disabled");
 		},"json");
@@ -96,6 +138,7 @@ function deviceReady() {
 		$("#pname").html(window.localStorage["name"]);
 		$(".private").removeClass('private');
 	}
+	
 }
 
 
