@@ -47,7 +47,6 @@ function handleLogin() {
 	$("#submitButton",form).attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
-	alert("click");
 	if(u != '' && p!= '') {
 		$.post("http://www.clubmascodin.com/app/auth.php", {username:u,password:p}, function(res) {
 			if(res == false) {
@@ -76,14 +75,28 @@ function handleLogin() {
 				//window.localStorage["userdata"] = res;
 				/* var pushNotification = window.plugins.pushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"}); */
-				push.unregister(
-				  () => {
-					console.log('success');
-				  },
-				  () => {
-					console.log('error');
-				  }
-				);
+				
+				try {
+					push = PushNotification.init({
+						android: {
+							"senderID": "349344466742"
+						},
+						browser: {
+							pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+						}
+					});
+					push.unregister(
+					  () => {
+						alert('success');
+					  },
+					  () => {
+						alert('error');
+					  }
+					);
+				} catch(err) {
+				  alert(err);
+				}
+				
 				window.location = "bienvenido.html";
 			}
 			$("#submitButton").removeAttr("disabled");
