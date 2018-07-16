@@ -12,7 +12,7 @@
     <author href="http://novalmedia.com" email="a.troitino@novalmedia.com">Novalmedia</author>
 
 	
-    <content src="index.html" />
+    <content src="www/index.html" />
     
     <!--
         If you do not want any permissions to be added to your app, add the
