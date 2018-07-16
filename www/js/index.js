@@ -1,4 +1,4 @@
-
+const push;
 /* window.onNotificationGCM =  function(e) {
 	switch( e.event )
 	{
@@ -105,7 +105,7 @@ function deviceReady() {
 		$(".private").removeClass('private');
 	}
 	
-	const push = PushNotification.init({
+	push = PushNotification.init({
 		android: {
 			"senderID": "349344466742"
 		},
