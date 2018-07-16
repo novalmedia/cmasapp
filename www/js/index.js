@@ -1,4 +1,4 @@
-const push;
+var push;
 /* window.onNotificationGCM =  function(e) {
 	switch( e.event )
 	{
