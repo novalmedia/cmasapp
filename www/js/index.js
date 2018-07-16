@@ -47,7 +47,7 @@ function handleLogin() {
 	$("#submitButton",form).attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
-	console.log("click");
+	alert("click");
 	if(u != '' && p!= '') {
 		$.post("http://www.clubmascodin.com/app/auth.php", {username:u,password:p}, function(res) {
 			if(res == false) {
