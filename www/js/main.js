@@ -42,7 +42,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         console.log('Received Event: ' + id);
-		var pushNotification = window.plugins.pushNotification;
+		var pushNotification = window.plugins.PushNotification;
 		pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"349344466742","ecb":"app.onNotificationGCM"});
 		
     },

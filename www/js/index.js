@@ -73,7 +73,7 @@ function handleLogin() {
 				
 				window.localStorage.setItem("messages", '');
 				//window.localStorage["userdata"] = res;
-				var pushNotification = window.plugins.pushNotification;
+				var pushNotification = window.plugins.PushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"}); 
 				/* 
 				try {
@@ -118,7 +118,7 @@ function deviceReady() {
 		$(".private").removeClass('private');
 	}
 	
-	push = PushNotification.init({
+	push = pushNotification.init({
 		android: {
 			"senderID": "349344466742"
 		},
