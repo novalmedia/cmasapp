@@ -1,5 +1,5 @@
 var push;
-/* window.onNotificationGCM =  function(e) {
+ window.onNotificationGCM =  function(e) {
 	switch( e.event )
 	{
 		case 'registered':
@@ -9,7 +9,7 @@ var push;
 				$.post("http://www.clubmascodin.com/app/savegcm.php", {userid:uid,gcmkey:e.regid}, function(res) {
 					if (res==0){
 						/*navigator.notification.alert("Identificación correcta", function() {});*/
-						/* window.location = "bienvenido.html";
+						 window.location = "bienvenido.html";
 					} else {
 						window.location = "chgpwd.html";
 					}
@@ -26,7 +26,7 @@ var push;
 			console.log('An unknown GCM event has occurred');
 			break;
 	}
-}  */ 
+}   
 
 function init() {
 	document.addEventListener("deviceready", deviceReady, true);
@@ -73,8 +73,8 @@ function handleLogin() {
 				
 				window.localStorage.setItem("messages", '');
 				//window.localStorage["userdata"] = res;
-				/* var pushNotification = window.plugins.pushNotification;
-				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"}); */
+				var pushNotification = window.plugins.pushNotification;
+				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"}); 
 				/* 
 				try {
 					push = PushNotification.init({
