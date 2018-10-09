@@ -3,13 +3,13 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "clubmascodin.id"
-        version   = "1.1.2" versionCode="112">
+        version   = "1.1.3" versionCode="113">
 
     <name>ClubMascodin</name>
 
     <description>Club Mascodin</description>
 
-    <author href="http://novalmedia.com" email="a.troitino@novalmedia.com">Novalmedia</author>
+    <author href="http://proyectosweb.info" email="info@proyectosweb.info">Jose Antonio Troitiño</author>
 
 	
     <content src="index.html" />
@@ -51,16 +51,19 @@
 	<access origin="*" />
     <access origin="*://*.clubmascodin.com/*" />
     <access origin="*://*.santanderelavontpvvirtual.es/*" />
+    <access origin="*://*.arcot.com/*" />
     <access origin="*://*.facebook.com/*" />
     <access origin="*://*.clubmascodin.blogspot.com.es/*" />
 	
 	<allow-navigation href="*://*.clubmascodin.com/*" />
 	<allow-navigation href="*://*.santanderelavontpvvirtual.es/*" />
+	<allow-navigation href="*://*.arcot.com/*" />
 	<allow-navigation href="*://*.facebook.com/*" />
 	<allow-navigation href="*://*.clubmascodin.blogspot.com.es/*" />
 	
 	<allow-intent href="*://*.clubmascodin.com/*" />
 	<allow-intent href="*://*.santanderelavontpvvirtual.es/*" />
+	<allow-intent href="*://*.arcot.com/*" />
 	<allow-intent href="*://*.facebook.com/*" />
 	<allow-intent href="*://*.clubmascodin.blogspot.com.es/*" />
     
