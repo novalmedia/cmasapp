@@ -75,7 +75,7 @@ function handleLogin() {
 				//window.localStorage["userdata"] = res;
 				/* var pushNotification = window.plugins.pushNotification;
 				pushNotification.register(successHandler, errorHandler,{"senderID":"349344466742","ecb":"onNotificationGCM"}); */
-				
+				/* 
 				try {
 					push = PushNotification.init({
 						android: {
@@ -95,7 +95,7 @@ function handleLogin() {
 					);
 				} catch(err) {
 				  alert(err);
-				}
+				} */
 				
 				window.location = "bienvenido.html";
 			}
