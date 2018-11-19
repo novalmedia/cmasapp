@@ -90,11 +90,10 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
     <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-	<plugin name="phonegap-plugin-push" spec="1.8.0" />
-	<preference name="android-build-tool" value="gradle" />
-	<plugin name="phonegap-plugin-push" source="npm">
+	<plugin name="phonegap-plugin-push" spec="1.8.0">
 		<param name="SENDER_ID" value="349344466742" />
 	</plugin>
+	<preference name="android-build-tool" value="gradle" />
 
     <gap:platform name="android"/>
     <preference name="splash-screen-duration" value="3000"/></widget>
