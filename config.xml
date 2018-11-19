@@ -57,6 +57,7 @@
 	
 	<allow-navigation href="*://*.clubmascodin.com/*" />
 	<allow-navigation href="*://*.santanderelavontpvvirtual.es/*" />
+	<allow-navigation href="*://*.redsys.es/*" />
 	<allow-navigation href="*://*.arcot.com/*" />
 	<allow-navigation href="*://*.facebook.com/*" />
 	<allow-navigation href="*://*.clubmascodin.blogspot.com.es/*" />
